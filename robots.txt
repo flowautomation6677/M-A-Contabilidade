@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /
+
+User-Agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://www.meacontabilidadeconsultiva.com.br/sitemap.xml
+Host: https://www.meacontabilidadeconsultiva.com.br

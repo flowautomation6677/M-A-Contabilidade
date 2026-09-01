@@ -1,0 +1,45 @@
+# M&A Contabilidade Consultiva
+
+> Contabilidade consultiva para clínicas médicas, odontológicas e veterinárias, com planejamento tributário, BPO financeiro e suporte próximo.
+
+## Principais páginas
+
+- [Início](https://www.meacontabilidadeconsultiva.com.br/)
+- [Especialidades](https://www.meacontabilidadeconsultiva.com.br/especialidades)
+- [Blog](https://www.meacontabilidadeconsultiva.com.br/blog)
+- [Contato](https://www.meacontabilidadeconsultiva.com.br/contato)
+
+## Categorias do blog
+
+- [Gestão financeira](https://www.meacontabilidadeconsultiva.com.br/blog/categoria/gestao-financeira): Fluxo de caixa, indicadores, rentabilidade, planejamento financeiro e decisões para clínicas mais previsíveis.
+- [Tributação e planejamento](https://www.meacontabilidadeconsultiva.com.br/blog/categoria/tributacao-planejamento): Regimes tributários, Imposto de Renda, reforma tributária e organização patrimonial para profissionais da saúde.
+- [Contabilidade consultiva e abertura](https://www.meacontabilidadeconsultiva.com.br/blog/categoria/contabilidade-consultiva-abertura): Abertura de clínicas, troca de contador e acompanhamento consultivo para estruturar decisões com segurança.
+- [Fiscal, trabalhista e compliance](https://www.meacontabilidadeconsultiva.com.br/blog/categoria/fiscal-trabalhista-compliance): Notas fiscais, obrigações trabalhistas, conformidade e processos que reduzem riscos na operação da clínica.
+
+## Artigos
+
+- [Reforma Tributária para clínicas médicas: como funciona a redução de 60% no IBS e na CBS](https://www.meacontabilidadeconsultiva.com.br/blog/reforma-tributaria-clinicas-medicas-reducao-60-ibs-cbs): Serviços de saúde listados em lei têm redução de 60% nas alíquotas do IBS e da CBS. Veja o que isso significa, quem pode usar o benefício e como preparar a clínica.
+- [Rentabilidade de clínica: indicadores que transformam números em decisão](https://www.meacontabilidadeconsultiva.com.br/blog/analise-rentabilidade-clinica): Faturamento não mostra sozinho a saúde da clínica. Uma análise útil combina competência, caixa, margem por serviço, capacidade e qualidade do recebimento.
+- [Provisão de férias em clínicas: como alinhar contabilidade, escala e caixa](https://www.meacontabilidadeconsultiva.com.br/blog/provisao-ferias-clinicas): Provisão contábil e reserva de caixa são controles diferentes. A clínica precisa reconhecer o benefício conforme é adquirido e guardar liquidez para o pagamento.
+- [NFS-e para clínicas em 2026: como emitir, conferir e evitar divergências](https://www.meacontabilidadeconsultiva.com.br/blog/nota-fiscal-eletronica-clinicas): Clínicas prestadoras de serviços lidam principalmente com NFS-e, não com a NF-e de mercadorias. Município, tomador, código do serviço e retenções determinam o processo.
+- [Contrato de trabalho e prestação de serviços para médicos: pontos que não podem faltar](https://www.meacontabilidadeconsultiva.com.br/blog/contrato-trabalho-medicos): O nome do contrato não define sozinho a relação. Entenda como documentar escopo, autonomia, remuneração, dados, responsabilidades e saída com segurança.
+- [Depreciação de equipamentos médicos: o que ela mostra sobre o investimento](https://www.meacontabilidadeconsultiva.com.br/blog/depreciacao-equipamentos-medicos): Depreciação distribui contabilmente o custo de um equipamento ao longo da vida útil. O efeito tributário depende do contribuinte, do regime e da escrituração.
+- [Gestão de recebíveis em clínicas: como transformar faturamento em caixa](https://www.meacontabilidadeconsultiva.com.br/blog/gestao-recebiveis-clinicas): Faturar não é o mesmo que receber. Uma boa gestão acompanha particulares, convênios, cartões, glosas e atrasos com processo, indicadores e proteção de dados.
+- [Cursos e congressos médicos são dedutíveis no Imposto de Renda?](https://www.meacontabilidadeconsultiva.com.br/blog/deducoes-educacao-continuada): Nem todo gasto com educação é dedutível da mesma forma. Entenda a diferença entre despesas de instrução na declaração e gastos profissionais registrados no Livro Caixa.
+- [Médico autônomo ou pessoa jurídica: como comparar as estruturas em 2026](https://www.meacontabilidadeconsultiva.com.br/blog/pessoa-juridica-vs-autonomo): A escolha entre pessoa física e pessoa jurídica não deve ser feita com percentuais genéricos. Faturamento, despesas, folha, município, tipo de serviço e distribuição de renda alteram o resultado.
+- [Previdência complementar para médicos: como comparar PGBL e VGBL](https://www.meacontabilidadeconsultiva.com.br/blog/contribuicao-previdenciaria-complementar): PGBL e VGBL têm tratamentos tributários diferentes. A escolha deve considerar declaração de IR, renda tributável, liquidez, taxas, prazo e perfil de risco.
+- [Holding familiar para médicos: quando a estrutura faz sentido em 2026](https://www.meacontabilidadeconsultiva.com.br/blog/holding-familiar-medicos): Holding familiar não é fórmula automática de economia tributária nem blindagem absoluta. Veja como avaliar governança, sucessão, tributos e custos antes de constituir a estrutura.
+- [Pró-labore e distribuição de lucros em clínicas](https://www.meacontabilidadeconsultiva.com.br/blog/pro-labore-distribuicao-de-lucros-clinicas-medicas-e-odontologicas): Como separar remuneração, lucros, caixa da clínica e obrigações previdenciárias com documentação adequada.
+- [Receita Saúde para médicos e dentistas: erros comuns](https://www.meacontabilidadeconsultiva.com.br/blog/receita-saude-para-medicos-e-dentistas-erros-comuns): Cuidados no registro de recebimentos, identificação do paciente e conciliação das informações declaradas.
+- [Por que contratar contabilidade consultiva para a clínica](https://www.meacontabilidadeconsultiva.com.br/blog/por-que-contratar-contabilidade-consultiva-para-clinica): Veja como a contabilidade pode apoiar planejamento, gestão e decisões, além das obrigações fiscais.
+- [Tributos para médicos e dentistas: o que realmente importa](https://www.meacontabilidadeconsultiva.com.br/blog/tributos-para-medicos-e-dentistas-o-que-realmente-importa): Uma visão responsável sobre pessoa física, pessoa jurídica, regimes tributários e organização contábil.
+- [Reforma tributária em 2026 para médicos e clínicas](https://www.meacontabilidadeconsultiva.com.br/blog/reforma-tributaria-2026-para-medicos-e-clinicas): O que profissionais da saúde precisam acompanhar na transição e como preparar contratos, preços e processos.
+- [Indicadores financeiros para clínicas médicas](https://www.meacontabilidadeconsultiva.com.br/blog/indicadores-financeiros-para-clinicas-medicas): Os números que ajudam sócios de clínicas a acompanhar caixa, margem, inadimplência e produtividade.
+- [Como trocar de contador na clínica sem interromper a operação](https://www.meacontabilidadeconsultiva.com.br/blog/como-trocar-de-contador-na-clinica): Documentos, acessos e cuidados para conduzir uma transição contábil organizada e segura.
+- [BPO financeiro para clínicas: quando faz sentido](https://www.meacontabilidadeconsultiva.com.br/blog/bpo-financeiro-para-clinicas): Entenda como rotinas financeiras organizadas melhoram caixa, indicadores e decisões da clínica.
+- [Como abrir uma clínica médica com segurança](https://www.meacontabilidadeconsultiva.com.br/blog/como-abrir-uma-clinica-medica): Um roteiro prático para estruturar CNPJ, licenças, tributos, equipe e controles financeiros desde o início.
+- [Planejamento tributário para clínicas médicas](https://www.meacontabilidadeconsultiva.com.br/blog/planejamento-tributario-para-clinicas-medicas): Como organizar regime, folha, faturamento e distribuição de resultados para pagar o necessário com segurança.
+
+## Contato e responsabilidade editorial
+
+Os conteúdos são informativos e revisados editorialmente pela M&A. Casos tributários, societários, trabalhistas e financeiros exigem análise individual.
