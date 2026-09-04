@@ -10,7 +10,7 @@
     </title>
     <meta
       name="description"
-      content="Reduza o IRPJ e a CSLL da sua clínica médica em até 70% através da equiparação hospitalar, de forma 100% legal. Veja os requisitos e quem tem direito."
+      content="Reduza a base de cálculo do IRPJ e da CSLL da sua clínica com a equiparação hospitalar. Veja os requisitos e quem tem direito."
     />
     <meta name="application-name" content="M&amp;A Contabilidade Consultiva" />
     <meta name="author" content="M&amp;A Contabilidade Consultiva" />
@@ -27,7 +27,7 @@
     />
     <meta
       property="og:description"
-      content="Reduza o IRPJ e a CSLL da sua clínica médica em até 70% através da equiparação hospitalar, de forma legal."
+      content="Reduza a base de cálculo do IRPJ e da CSLL da sua clínica com a equiparação hospitalar, de forma legal."
     />
     <meta
       property="og:url"
@@ -53,7 +53,7 @@
     />
     <meta
       name="twitter:description"
-      content="Reduza o IRPJ e a CSLL da sua clínica médica em até 70% através da equiparação hospitalar."
+      content="Reduza a base de cálculo do IRPJ e da CSLL da sua clínica com a equiparação hospitalar."
     />
     <meta
       name="twitter:image"
@@ -199,7 +199,7 @@
           <div class="hero-copy">
             <p class="eyebrow light">Benefício Fiscal para Clínicas Médicas</p>
             <h1>
-              Você não precisa ter um hospital para pagar os impostos de um
+              Sua clínica pode reduzir a base de cálculo do IRPJ de 32% para 8% — sem virar hospital
             </h1>
             <div class="hero-leads">
               <p>
@@ -230,7 +230,7 @@
                 href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google%20e%20quero%20uma%20análise%20de%20viabilidade%20para%20equiparação%20hospitalar%20na%20minha%20clínica."
                 target="_blank"
                 onclick="gtag_report_conversion()"
-                >Descobrir se minha clínica tem direito →</a
+                >Quero avaliar o enquadramento da minha clínica</a
               >
               <p
                 style="
@@ -294,9 +294,9 @@
               ><span>Redução na base de cálculo da CSLL</span>
             </div>
             <div>
-              <strong>100% Legal</strong
+              <strong>Fundamento Legal</strong
               ><span
-                >Benefício previsto em lei e validado pela Receita Federal</span
+                >Previsto no art. 15, §1º, III, "a", da Lei 9.249/1995 e reconhecido pela Receita Federal, mediante cumprimento dos requisitos de estrutura da clínica.</span
               >
             </div>
             <div>
@@ -355,6 +355,127 @@
           </div>
         </div>
       </section>
+      
+      <section class="section" id="calculadora" style="background-color: #f8f9fa; padding: 4rem 0;">
+        <div class="container">
+          <div class="section-heading centered">
+            <p class="eyebrow">Simulação</p>
+            <h2>Quanto muda na base de cálculo?</h2>
+          </div>
+          
+          <div class="calculator-container" style="max-width: 800px; margin: 0 auto; background: #fff; padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <div style="margin-bottom: 2.5rem;">
+              <label style="display: block; font-weight: 600; margin-bottom: 1rem; font-size: 1.125rem;">Selecione seu faturamento mensal médio:</label>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;" id="calc-buttons">
+                <button type="button" class="button button-ghost calc-btn" data-value="50000" style="flex: 1; min-width: 140px;">Até R$ 50 mil</button>
+                <button type="button" class="button button-ghost calc-btn" data-value="100000" style="flex: 1; min-width: 140px;">R$ 50 a 100 mil</button>
+                <button type="button" class="button button-ghost calc-btn" data-value="200000" style="flex: 1; min-width: 140px;">R$ 100 a 200 mil</button>
+                <button type="button" class="button button-ghost calc-btn" data-value="500000" style="flex: 1; min-width: 140px;">R$ 200 a 500 mil</button>
+                <button type="button" class="button button-ghost calc-btn" id="calc-other-btn" style="flex: 1; min-width: 140px;">Outro valor</button>
+              </div>
+              <div id="calc-other-input-container" style="display: none; margin-top: 1.5rem;">
+                <label for="calc-custom-value" style="display: block; font-size: 0.875rem; margin-bottom: 0.5rem; font-weight: 500;">Digite o faturamento mensal (R$):</label>
+                <input type="number" id="calc-custom-value" class="input" style="width: 100%; max-width: 300px; padding: 0.875rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;" placeholder="Ex: 150000">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+              <div style="background: #fdfdfd; border: 1px solid #eee; padding: 1.5rem; border-radius: 12px; text-align: center;">
+                <h3 style="font-size: 1.125rem; margin-bottom: 0.5rem; font-weight: 600;">Base de cálculo sem equiparação</h3>
+                <p style="font-size: 0.875rem; color: #666; margin-bottom: 1rem;">32% da receita (IRPJ) + 32% (CSLL)</p>
+                <p style="font-size: 1.75rem; font-weight: bold; color: #333;" id="calc-base-sem">R$ 0,00</p>
+              </div>
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 1.5rem; border-radius: 12px; text-align: center;">
+                <h3 style="font-size: 1.125rem; margin-bottom: 0.5rem; font-weight: 600;">Base de cálculo com equiparação</h3>
+                <p style="font-size: 0.875rem; color: #666; margin-bottom: 1rem;">8% da receita (IRPJ) + 12% (CSLL)</p>
+                <p style="font-size: 1.75rem; font-weight: bold; color: #16a34a;" id="calc-base-com">R$ 0,00</p>
+              </div>
+            </div>
+
+            <div style="background: #111; color: #fff; padding: 2rem; border-radius: 12px; text-align: center; margin-bottom: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff; font-weight: 500;">Diferença na base, por ano</h3>
+              <p style="font-size: 2.5rem; font-weight: bold; color: #fbbf24;" id="calc-diff">R$ 0,00</p>
+            </div>
+
+            <div style="font-size: 0.8125rem; color: #666; line-height: 1.6; margin-bottom: 2.5rem; text-align: center;">
+              <p>Isto é a base de cálculo, não o imposto devido. O valor final depende do lucro efetivo, de adicionais e da apuração completa da clínica. Esta simulação usa o teto de cada faixa e serve para mostrar a ordem de grandeza da diferença — não substitui a análise técnica. Fundamento legal: art. 15, §1º, III, "a", da Lei 9.249/1995 — sujeito ao cumprimento dos requisitos de estrutura e regularização (ANVISA/RDC 50).</p>
+            </div>
+
+            <div style="text-align: center;">
+              <a class="button" href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google%20e%20quero%20uma%20análise%20de%20viabilidade%20para%20equiparação%20hospitalar%20na%20minha%20clínica." target="_blank" onclick="gtag_report_conversion()">Quero minha análise personalizada</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const buttons = document.querySelectorAll('.calc-btn');
+          const otherBtn = document.getElementById('calc-other-btn');
+          const otherInputContainer = document.getElementById('calc-other-input-container');
+          const customValueInput = document.getElementById('calc-custom-value');
+          
+          const baseSemEl = document.getElementById('calc-base-sem');
+          const baseComEl = document.getElementById('calc-base-com');
+          const diffEl = document.getElementById('calc-diff');
+
+          const formatCurrency = (value) => {
+            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+          };
+
+          const calculate = (monthlyRevenue) => {
+            if (!monthlyRevenue || isNaN(monthlyRevenue)) {
+              baseSemEl.textContent = 'R$ 0,00';
+              baseComEl.textContent = 'R$ 0,00';
+              diffEl.textContent = 'R$ 0,00';
+              return;
+            }
+
+            const annualRevenue = monthlyRevenue * 12;
+            const baseSem = annualRevenue * 0.64;
+            const baseCom = annualRevenue * 0.20;
+            const diff = baseSem - baseCom;
+
+            baseSemEl.textContent = formatCurrency(baseSem);
+            baseComEl.textContent = formatCurrency(baseCom);
+            diffEl.textContent = formatCurrency(diff);
+          };
+
+          buttons.forEach(btn => {
+            btn.addEventListener('click', function() {
+              buttons.forEach(b => {
+                b.classList.remove('button-dark');
+                b.classList.add('button-ghost');
+                b.style.color = '';
+                b.style.borderColor = '';
+                b.style.backgroundColor = '';
+              });
+              
+              this.classList.remove('button-ghost');
+              this.classList.add('button-dark');
+              
+              if (this.id === 'calc-other-btn') {
+                otherInputContainer.style.display = 'block';
+                calculate(parseFloat(customValueInput.value));
+              } else {
+                otherInputContainer.style.display = 'none';
+                calculate(parseFloat(this.dataset.value));
+              }
+            });
+          });
+
+          customValueInput.addEventListener('input', function() {
+            if (otherBtn.classList.contains('button-dark')) {
+              calculate(parseFloat(this.value));
+            }
+          });
+
+          if (buttons.length > 0) {
+            buttons[0].click();
+          }
+        });
+      </script>
+
       <section class="section section-soft" id="requisitos">
         <div class="container content-grid">
           <div>
@@ -390,7 +511,7 @@
                 href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google%20e%20quero%20saber%20se%20minha%20clínica%20tem%20direito%20à%20equiparação%20hospitalar."
                 target="_blank"
                 onclick="gtag_report_conversion()"
-                >Falar no WhatsApp</a
+                >Quero avaliar o enquadramento da minha clínica</a
               ><a
                 class="button button-ghost"
                 href="#faq"
@@ -417,7 +538,7 @@
               href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google,%20li%20as%20perguntas%20frequentes%20da%20página%20de%20equiparação%20hospitalar%20e%20quero%20falar%20com%20a%20equipe."
               target="_blank"
               onclick="gtag_report_conversion()"
-              >Falar com a equipe</a
+              >Quero avaliar o enquadramento da minha clínica</a
             >
           </div>
           <div class="faq-list">
@@ -519,8 +640,8 @@
             <div class="story-copy">
               <p>
                 A M&amp;A analisa seu contrato social, CNAEs, alvarás e forma de
-                emissão de notas fiscais para garantir que o benefício seja
-                aplicado com segurança e risco zero de autuação.
+                emissão de notas fiscais para que o benefício seja
+                aplicado com segurança, com toda a documentação e enquadramento avaliados antes de qualquer alteração.
               </p>
               <ul class="check-list">
                 <li>
@@ -545,7 +666,7 @@
                 class="button"
                 target="_blank"
                 onclick="gtag_report_conversion()"
-                >Falar com a equipe M&amp;A</a
+                >Quero avaliar o enquadramento da minha clínica</a
               >
             </div>
           </div>
@@ -681,6 +802,46 @@
           </div>
         </div>
       </section>
+      
+      <section class="section" id="depoimentos" style="background-color: #f8f9fa;">
+        <div class="container">
+          <div class="section-heading centered">
+            <p class="eyebrow">O que dizem no Google</p>
+            <h2>A tranquilidade de quem já confiou na M&amp;A</h2>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem;">
+            <div style="background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <span style="font-weight: 600; font-size: 1.1rem; color: #111;">Junior Maciel</span>
+                <span style="color: #fbbf24; font-size: 0.9rem;" aria-label="5 estrelas">★★★★★</span>
+              </div>
+              <p style="font-size: 0.95rem; color: #555; line-height: 1.6; font-style: italic; flex-grow: 1;">"Quero registrar aqui a minha satisfação com o nível de profissionalismo, organização e comprometimento. Sempre muito claro nas orientações, ágil nas respostas e extremamente seguro nas informações, o que transmite muita confiança..."</p>
+            </div>
+            
+            <div style="background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <span style="font-weight: 600; font-size: 1.1rem; color: #111;">Amanda Cezar</span>
+                <span style="color: #fbbf24; font-size: 0.9rem;" aria-label="5 estrelas">★★★★★</span>
+              </div>
+              <p style="font-size: 0.95rem; color: #555; line-height: 1.6; font-style: italic; flex-grow: 1;">"Só tenho elogios a declarar, o Rodrigo e toda a equipe dele são super atenciosos, sempre tiram todas as minhas dúvidas, são muito rápidos nas respostas e entregas também. Indico de olhos fechados."</p>
+            </div>
+            
+            <div style="background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <span style="font-weight: 600; font-size: 1.1rem; color: #111;">Joselangela Aurelio Soares Soares</span>
+                <span style="color: #fbbf24; font-size: 0.9rem;" aria-label="5 estrelas">★★★★★</span>
+              </div>
+              <p style="font-size: 0.95rem; color: #555; line-height: 1.6; font-style: italic; flex-grow: 1;">"Não são só contadores, são parceiros de verdade! Obrigada por toda paciência, atenção e por sempre me orientarem da melhor forma. Vocês são incríveis! Super indico ❤️"</p>
+            </div>
+          </div>
+          <div style="text-align: center;">
+            <a href="https://share.google/AeEsO8L34inpzfCWX" target="_blank" rel="noopener" class="button button-ghost" style="border: 1px solid #ddd; color: #333; display: inline-flex; align-items: center; gap: 0.5rem; background: #fff;">
+              <span>Ver todas as avaliações no Google</span>
+              <span style="color: #fbbf24; font-size: 1.1rem;" aria-hidden="true">★★★★★</span>
+            </a>
+          </div>
+        </div>
+      </section>
       <style>
         @media (max-width: 800px) {
           .final-cta-inner {
@@ -704,7 +865,7 @@
             href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google%20e%20quero%20conversar%20sobre%20equiparação%20hospitalar%20para%20minha%20clínica%20médica."
             target="_blank"
             onclick="gtag_report_conversion()"
-            >Conversar pelo WhatsApp</a
+            >Quero avaliar o enquadramento da minha clínica</a
           >
         </div>
       </section>
@@ -714,7 +875,7 @@
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Equiparação Hospitalar para Clínicas Médicas",
-        "description": "Reduza o IRPJ e a CSLL da sua clínica médica em até 70% através da equiparação hospitalar. A M&A conduz o processo de enquadramento, documentação e segregação de receitas.",
+        "description": "Reduza a base de cálculo do IRPJ e da CSLL da sua clínica com a equiparação hospitalar. A M&A conduz o processo de enquadramento, documentação e segregação de receitas.",
         "provider": {
           "@type": "AccountingService",
           "name": "M&A Contabilidade Consultiva",
