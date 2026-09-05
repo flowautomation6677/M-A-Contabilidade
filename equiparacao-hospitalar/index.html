@@ -535,6 +535,356 @@
           </div>
         </div>
       </section>
+
+      <!-- SEÇÃO: SUA ESPECIALIDADE SE QUALIFICA? (PRÉ-QUALIFICAÇÃO CRO) -->
+      <section class="section especialidades-section" id="especialidades">
+        <style>
+          .especialidades-section {
+            background-color: #FFFFFF;
+            padding: 5.5rem 0;
+            border-bottom: 1px solid #ECE9E3;
+          }
+          .especialidades-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+          }
+          .especialidades-heading {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3.5rem auto;
+          }
+          .especialidades-heading .editorial-eyebrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.625rem;
+            margin-bottom: 0.875rem;
+          }
+          .especialidades-heading h2 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(2rem, 3.2vw, 2.65rem);
+            font-weight: 600;
+            color: #11151A;
+            line-height: 1.25;
+            letter-spacing: -0.015em;
+            margin: 0 0 1rem 0;
+          }
+          .especialidades-lead {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.0625rem;
+            color: #4B5563;
+            line-height: 1.65;
+            margin: 0;
+          }
+          .especialidades-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+          }
+          .especialidade-card {
+            background: #F8F6F2;
+            border: 1px solid #ECE9E3;
+            border-radius: 16px;
+            padding: 1.75rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+          }
+          .especialidade-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+            border-color: #D98E2B;
+          }
+          .especialidade-icon-box {
+            width: 44px;
+            height: 44px;
+            background: #11151A;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            color: #E8A33D;
+            flex-shrink: 0;
+          }
+          .especialidade-card h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #11151A;
+            line-height: 1.3;
+            margin: 0 0 0.5rem 0;
+          }
+          .especialidade-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            color: #6B7280;
+            line-height: 1.55;
+            margin: 0 0 1.25rem 0;
+            flex-grow: 1;
+          }
+          .especialidade-badge {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #11151A;
+            background: #ECE9E3;
+            padding: 0.35rem 0.65rem;
+            border-radius: 6px;
+            align-self: flex-start;
+          }
+          
+          /* Card Comparativo de Pré-qualificação */
+          .prequal-box {
+            background: #FFFFFF;
+            border: 1px solid #ECE9E3;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+          }
+          .prequal-col {
+            display: flex;
+            flex-direction: column;
+          }
+          .prequal-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+          }
+          .prequal-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+          }
+          .prequal-pill.eligible {
+            background: #EBF7EE;
+            color: #1E6B37;
+            border: 1px solid #C4E8CD;
+          }
+          .prequal-pill.ineligible {
+            background: #FDF2F2;
+            color: #991B1B;
+            border: 1px solid #F8D7DA;
+          }
+          .prequal-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+          }
+          .prequal-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            color: #4B5563;
+            line-height: 1.5;
+          }
+          .prequal-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+          }
+          @media (max-width: 1024px) {
+            .especialidades-grid {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+          @media (max-width: 768px) {
+            .especialidades-section {
+              padding: 3.5rem 0;
+            }
+            .prequal-box {
+              grid-template-columns: 1fr;
+              gap: 2rem;
+              padding: 1.5rem;
+            }
+          }
+          @media (max-width: 580px) {
+            .especialidades-grid {
+              grid-template-columns: 1fr;
+            }
+          }
+        </style>
+
+        <div class="especialidades-container">
+          <div class="especialidades-heading">
+            <div class="editorial-eyebrow">
+              <span class="editorial-eyebrow-dash" aria-hidden="true"></span>
+              <span class="editorial-eyebrow-label">Quem tem direito</span>
+            </div>
+            <h2>Sua especialidade se qualifica para a Equiparação Hospitalar?</h2>
+            <p class="especialidades-lead">
+              A redução tributária do art. 15 da Lei 9.249/1995 (pacificada pelo STJ) não exige internação ou leitos, mas <strong>aplica-se estritamente à realização de procedimentos médicos e exames</strong>. Conheça as principais especialidades elegíveis:
+            </p>
+          </div>
+
+          <div class="especialidades-grid">
+            <article class="especialidade-card">
+              <div class="especialidade-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <h3>Dermatologia</h3>
+              <p>Procedimentos a laser, biópsias cutâneas, crioterapia, eletrocauterizações e pequenas cirurgias ambulatoriais.</p>
+              <span class="especialidade-badge">Procedimentos &amp; Biópsias</span>
+            </article>
+
+            <article class="especialidade-card">
+              <div class="especialidade-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+              <h3>Cirurgia Plástica</h3>
+              <p>Procedimentos ambulatoriais, intervenções reconstrutoras e atos cirúrgicos realizados sob anestesia local ou sedação.</p>
+              <span class="especialidade-badge">Cirurgias Ambulatoriais</span>
+            </article>
+
+            <article class="especialidade-card">
+              <div class="especialidade-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <h3>Oftalmologia</h3>
+              <p>Cirurgias a laser (refrativas), catarata, retina, procedimentos terapêuticos e exames diagnósticos invasivos/gráficos.</p>
+              <span class="especialidade-badge">Laser &amp; Microcirurgias</span>
+            </article>
+
+            <article class="especialidade-card">
+              <div class="especialidade-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="5" r="3"></circle>
+                  <path d="M6.5 8a2 2 0 0 0-1.9 1.4l-1.5 5A2 2 0 0 0 5 17h14a2 2 0 0 0 1.9-2.6l-1.5-5A2 2 0 0 0 17.5 8z"></path>
+                  <path d="M12 17v4"></path>
+                </svg>
+              </div>
+              <h3>Ortopedia</h3>
+              <p>Infiltrações articulares, imobilizações sob controle, artroscopias e procedimentos cirúrgicos ambulatoriais.</p>
+              <span class="especialidade-badge">Infiltrações &amp; Artroscopia</span>
+            </article>
+
+            <article class="especialidade-card">
+              <div class="especialidade-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                </svg>
+              </div>
+              <h3>Reprodução &amp; Ginecologia</h3>
+              <p>Punções foliculares, transferências embrionárias, histeroscopias, biópsias e intervenções cirúrgicas ginecológicas.</p>
+              <span class="especialidade-badge">Punções &amp; Histeroscopia</span>
+            </article>
+
+            <article class="especialidade-card">
+              <div class="especialidade-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                  <path d="M3 9h18M9 21V9"></path>
+                </svg>
+              </div>
+              <h3>Exames de Imagem</h3>
+              <p>Ultrassonografia, tomografia computadorizada, ressonância magnética, densitometria, endoscopia e colonoscopia.</p>
+              <span class="especialidade-badge">Imagem &amp; Diagnóstico</span>
+            </article>
+
+            <article class="especialidade-card">
+              <div class="especialidade-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                  <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                  <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                </svg>
+              </div>
+              <h3>Otorrino &amp; Urologia</h3>
+              <p>Videolaringoscopias, biópsias, cauterizações, vasectomias, cistoscopias e procedimentos diagnósticos invasivos.</p>
+              <span class="especialidade-badge">Exames &amp; Atos Invasivos</span>
+            </article>
+
+            <article class="especialidade-card">
+              <div class="especialidade-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 18h12"></path>
+                  <path d="M3 22h18"></path>
+                  <path d="M14 22a7 7 0 1 0-4 0"></path>
+                  <path d="M9 14h6"></path>
+                  <path d="M12 6v8"></path>
+                </svg>
+              </div>
+              <h3>Laboratórios de Análise</h3>
+              <p>Patologia clínica, citopatologia, análises clínicas e métodos laboratoriais especializados de apoio diagnóstico.</p>
+              <span class="especialidade-badge">Análises Clínicas</span>
+            </article>
+          </div>
+
+          <!-- Box de Pré-qualificação Clara (Filtro Anti-clique desqualificado) -->
+          <div class="prequal-box">
+            <div class="prequal-col">
+              <div class="prequal-header">
+                <span class="prequal-pill eligible">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Se Enquadra no Benefício
+                </span>
+              </div>
+              <ul class="prequal-list">
+                <li>
+                  <svg class="prequal-icon" viewBox="0 0 24 24" fill="none" stroke="#1E6B37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Procedimentos e atos médicos:</strong> qualquer intervenção ambulatorial, cirurgia com sedação/anestesia local ou métodos terapêuticos.</span>
+                </li>
+                <li>
+                  <svg class="prequal-icon" viewBox="0 0 24 24" fill="none" stroke="#1E6B37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Exames complementares e diagnósticos:</strong> métodos gráficos, análises clínicas, endoscopias e exames por imagem.</span>
+                </li>
+                <li>
+                  <svg class="prequal-icon" viewBox="0 0 24 24" fill="none" stroke="#1E6B37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Clínicas com alvará da Anvisa (RDC 50)</strong> organizadas como Sociedade Empresária no Lucro Presumido.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="prequal-col">
+              <div class="prequal-header">
+                <span class="prequal-pill ineligible">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  Não Se Enquadra
+                </span>
+              </div>
+              <ul class="prequal-list">
+                <li>
+                  <svg class="prequal-icon" viewBox="0 0 24 24" fill="none" stroke="#991B1B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  <span><strong>Consultas médicas simples:</strong> a lei veda a redução de 8%/12% sobre a receita exclusiva de consultas (estas permanecem na base normal de 32%).</span>
+                </li>
+                <li>
+                  <svg class="prequal-icon" viewBox="0 0 24 24" fill="none" stroke="#991B1B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  <span><strong>Atendimentos exclusivamente clínicos / conversacionais:</strong> profissionais e consultórios sem realização de procedimentos médicos ou exames (ex.: psicologia, nutrição clínica pura).</span>
+                </li>
+                <li>
+                  <svg class="prequal-icon" viewBox="0 0 24 24" fill="none" stroke="#991B1B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  <span><strong>Atuação como profissional autônomo (PF)</strong> ou sem estrutura societária de Sociedade Empresária registrada.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
       
       <section class="section calc-section" id="calculadora" style="background-color: #f8f9fa;">
         <div class="container">
@@ -1490,6 +1840,71 @@
           </p>
         </div>
       </section>
+      <section class="section story-section" id="processo">
+        <div class="container">
+          <div class="story-heading">
+            <p class="eyebrow light">Assessoria Especializada</p>
+            <h2>
+              Todo o processo de equiparação feito por quem entende de saúde
+            </h2>
+          </div>
+          <div class="story-grid story-detail-grid">
+            <div
+              class="story-image story-image-home"
+              style="max-width: 480px; margin: 0 auto; width: 100%"
+            >
+              <img
+                src="/images/site/equipe-mea-hero.webp"
+                width="550"
+                height="778"
+                loading="lazy"
+                alt="Equipe da M&amp;A Contabilidade Consultiva"
+                style="
+                  width: 100%;
+                  height: 440px;
+                  aspect-ratio: auto;
+                  object-fit: cover;
+                  object-position: center 15%;
+                  border-radius: 14px;
+                  display: block;
+                "
+              />
+            </div>
+            <div class="story-copy">
+              <p>
+                A M&amp;A analisa seu contrato social, CNAEs, alvarás e forma de
+                emissão de notas fiscais, assegurando uma estruturação alinhada aos
+                requisitos legais para reduzir a exposição a questionamentos fiscais.
+              </p>
+              <ul class="check-list">
+                <li>
+                  Análise de viabilidade técnica e simulação de economia
+                  tributária.
+                </li>
+                <li>
+                  Alteração societária para Sociedade Empresária (Junta
+                  Comercial), se necessário.
+                </li>
+                <li>
+                  Orientação precisa para obtenção dos alvarás da Vigilância
+                  Sanitária (Anvisa).
+                </li>
+                <li>
+                  Segregação correta de receitas (consultas vs procedimentos) no
+                  dia a dia.
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google%20e%20quero%20falar%20com%20um%20consultor%20da%20M%26A%20sobre%20equiparação%20hospitalar."
+                class="button"
+                target="_blank"
+                onclick="gtag_report_conversion()"
+                >Quero avaliar o enquadramento da minha clínica</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="section faq-section" id="faq" aria-labelledby="faq-title">
         <div class="container faq-grid">
           <div class="section-heading centered">
@@ -1598,203 +2013,7 @@
           </div>
         </div>
       </section>
-      <section class="section story-section" id="processo">
-        <div class="container">
-          <div class="story-heading">
-            <p class="eyebrow light">Assessoria Especializada</p>
-            <h2>
-              Todo o processo de equiparação feito por quem entende de saúde
-            </h2>
-          </div>
-          <div class="story-grid story-detail-grid">
-            <div
-              class="story-image story-image-home"
-              style="max-width: 480px; margin: 0 auto; width: 100%"
-            >
-              <img
-                src="/images/site/equipe-mea-hero.webp"
-                width="550"
-                height="778"
-                loading="lazy"
-                alt="Equipe da M&amp;A Contabilidade Consultiva"
-                style="
-                  width: 100%;
-                  height: 440px;
-                  aspect-ratio: auto;
-                  object-fit: cover;
-                  object-position: center 15%;
-                  border-radius: 14px;
-                  display: block;
-                "
-              />
-            </div>
-            <div class="story-copy">
-              <p>
-                A M&amp;A analisa seu contrato social, CNAEs, alvarás e forma de
-                emissão de notas fiscais, assegurando uma estruturação alinhada aos
-                requisitos legais para reduzir a exposição a questionamentos fiscais.
-              </p>
-              <ul class="check-list">
-                <li>
-                  Análise de viabilidade técnica e simulação de economia
-                  tributária.
-                </li>
-                <li>
-                  Alteração societária para Sociedade Empresária (Junta
-                  Comercial), se necessário.
-                </li>
-                <li>
-                  Orientação precisa para obtenção dos alvarás da Vigilância
-                  Sanitária (Anvisa).
-                </li>
-                <li>
-                  Segregação correta de receitas (consultas vs procedimentos) no
-                  dia a dia.
-                </li>
-              </ul>
-              <a
-                href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google%20e%20quero%20falar%20com%20um%20consultor%20da%20M%26A%20sobre%20equiparação%20hospitalar."
-                class="button"
-                target="_blank"
-                onclick="gtag_report_conversion()"
-                >Quero avaliar o enquadramento da minha clínica</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="section">
-        <div class="container">
-          <div class="section-heading split-heading">
-            <div>
-              <p class="eyebrow">Conteúdo especializado</p>
-              <h2>Artigos recomendados para médicos e gestores</h2>
-            </div>
-            <a href="/blog" class="text-link"
-              >Ver todos os artigos <span>→</span></a
-            >
-          </div>
-          <div class="article-grid">
-            <article class="article-card">
-              <a
-                href="/equiparacao-hospitalar/quanto-custa-equiparacao-hospitalar"
-                class="article-card-image"
-                aria-label="Ler Quanto custa a Equiparação Hospitalar e em quanto tempo o investimento se paga"
-              >
-                <img
-                  src="/images/blog/reforma-tributaria-clinicas-medicas-reducao-60-ibs-cbs.webp"
-                  width="600"
-                  height="400"
-                  loading="lazy"
-                  alt="Equiparação hospitalar para clínicas"
-                />
-              </a>
-              <div class="article-card-body">
-                <div class="article-meta">
-                  <span>Gestão e Retorno</span><span>6 min de leitura</span>
-                </div>
-                <h2>
-                  <a
-                    href="/equiparacao-hospitalar/quanto-custa-equiparacao-hospitalar"
-                    >Quanto custa a Equiparação Hospitalar e em quanto tempo o
-                    investimento se paga?</a
-                  >
-                </h2>
-                <p>
-                  A equiparação não é uma despesa, é uma recuperação de caixa.
-                  Entenda os custos e veja como a economia mensal cobre o
-                  investimento rapidamente.
-                </p>
-                <a
-                  href="/equiparacao-hospitalar/quanto-custa-equiparacao-hospitalar"
-                  class="text-link"
-                  target="_blank"
-                  >Ler artigo <span aria-hidden="true">→</span></a
-                >
-              </div>
-            </article>
-            <article class="article-card">
-              <a
-                href="/equiparacao-hospitalar/procedimentos-medicos-equiparacao-hospitalar"
-                class="article-card-image"
-                aria-label="Ler Quais procedimentos médicos dão direito à Equiparação Hospitalar"
-              >
-                <img
-                  src="/images/blog/holding-familiar-medicos.webp"
-                  width="600"
-                  height="400"
-                  loading="lazy"
-                  alt="Procedimentos médicos para equiparação"
-                />
-              </a>
-              <div class="article-card-body">
-                <div class="article-meta">
-                  <span>Requisitos legais</span><span>5 min de leitura</span>
-                </div>
-                <h2>
-                  <a
-                    href="/equiparacao-hospitalar/procedimentos-medicos-equiparacao-hospitalar"
-                    >Quais procedimentos médicos dão direito à Equiparação
-                    Hospitalar?</a
-                  >
-                </h2>
-                <p>
-                  Entenda quais tipos de cirurgias e exames são aceitos pela
-                  Receita Federal para que sua clínica tenha direito ao
-                  benefício fiscal.
-                </p>
-                <a
-                  href="/equiparacao-hospitalar/procedimentos-medicos-equiparacao-hospitalar"
-                  class="text-link"
-                  target="_blank"
-                  >Ler artigo <span aria-hidden="true">→</span></a
-                >
-              </div>
-            </article>
-            <article class="article-card">
-              <a
-                href="/equiparacao-hospitalar/simples-nacional-ou-lucro-presumido-clinicas"
-                class="article-card-image"
-                aria-label="Ler Simples Nacional ou Lucro Presumido para clínicas"
-              >
-                <img
-                  src="/images/blog/pro-labore-lucros.webp"
-                  width="600"
-                  height="400"
-                  loading="lazy"
-                  alt="Simples Nacional vs Lucro Presumido"
-                />
-              </a>
-              <div class="article-card-body">
-                <div class="article-meta">
-                  <span>Planejamento Tributário</span
-                  ><span>7 min de leitura</span>
-                </div>
-                <h2>
-                  <a
-                    href="/equiparacao-hospitalar/simples-nacional-ou-lucro-presumido-clinicas"
-                    >Simples Nacional ou Lucro Presumido: qual o melhor para
-                    clínicas?</a
-                  >
-                </h2>
-                <p>
-                  Veja um comparativo prático e descubra quando vale a pena sair
-                  do Simples Nacional para aproveitar a redução da equiparação
-                  hospitalar.
-                </p>
-                <a
-                  href="/equiparacao-hospitalar/simples-nacional-ou-lucro-presumido-clinicas"
-                  class="text-link"
-                  target="_blank"
-                  >Ler artigo <span aria-hidden="true">→</span></a
-                >
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-      
-      <section class="section" id="depoimentos" style="background-color: #f8f9fa;">
+            <section class="section" id="depoimentos" style="background-color: #f8f9fa;">
         <div class="container">
           <div class="section-heading centered">
             <p class="eyebrow">O que dizem no Google</p>
@@ -1858,6 +2077,147 @@
             onclick="gtag_report_conversion()"
             >Quero avaliar o enquadramento da minha clínica</a
           >
+        </div>
+      </section>
+      
+      <!-- SEÇÃO: CONTEÚDO ESPECIALIZADO / BLOG (POSICIONADO APÓS CTA FINAL PARA EVITAR PORTAS DE FUGA) -->
+      <section class="section">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">Conteúdo especializado</p>
+              <h2>Artigos recomendados para médicos e gestores</h2>
+            </div>
+            <a href="/blog" class="text-link" target="_blank" rel="noopener noreferrer"
+              >Ver todos os artigos <span>→</span></a
+            >
+          </div>
+          <div class="article-grid">
+            <article class="article-card">
+              <a
+                href="/equiparacao-hospitalar/quanto-custa-equiparacao-hospitalar"
+                class="article-card-image"
+                aria-label="Ler Quanto custa a Equiparação Hospitalar e em quanto tempo o investimento se paga"
+               target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/blog/reforma-tributaria-clinicas-medicas-reducao-60-ibs-cbs.webp"
+                  width="600"
+                  height="400"
+                  loading="lazy"
+                  alt="Equiparação hospitalar para clínicas"
+                />
+              </a>
+              <div class="article-card-body">
+                <div class="article-meta">
+                  <span>Gestão e Retorno</span><span>6 min de leitura</span>
+                </div>
+                <h2>
+                  <a
+                    href="/equiparacao-hospitalar/quanto-custa-equiparacao-hospitalar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Quanto custa a Equiparação Hospitalar e em quanto tempo o
+                    investimento se paga?</a
+                  >
+                </h2>
+                <p>
+                  A equiparação não é uma despesa, é uma recuperação de caixa.
+                  Entenda os custos e veja como a economia mensal cobre o
+                  investimento rapidamente.
+                </p>
+                <a
+                  href="/equiparacao-hospitalar/quanto-custa-equiparacao-hospitalar"
+                  class="text-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ler artigo <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+            <article class="article-card">
+              <a
+                href="/equiparacao-hospitalar/procedimentos-medicos-equiparacao-hospitalar"
+                class="article-card-image"
+                aria-label="Ler Quais procedimentos médicos dão direito à Equiparação Hospitalar"
+               target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/blog/holding-familiar-medicos.webp"
+                  width="600"
+                  height="400"
+                  loading="lazy"
+                  alt="Procedimentos médicos para equiparação"
+                />
+              </a>
+              <div class="article-card-body">
+                <div class="article-meta">
+                  <span>Requisitos legais</span><span>5 min de leitura</span>
+                </div>
+                <h2>
+                  <a
+                    href="/equiparacao-hospitalar/procedimentos-medicos-equiparacao-hospitalar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Quais procedimentos médicos dão direito à Equiparação
+                    Hospitalar?</a
+                  >
+                </h2>
+                <p>
+                  Entenda quais tipos de cirurgias e exames são aceitos pela
+                  Receita Federal para que sua clínica tenha direito ao
+                  benefício fiscal.
+                </p>
+                <a
+                  href="/equiparacao-hospitalar/procedimentos-medicos-equiparacao-hospitalar"
+                  class="text-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ler artigo <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+            <article class="article-card">
+              <a
+                href="/equiparacao-hospitalar/simples-nacional-ou-lucro-presumido-clinicas"
+                class="article-card-image"
+                aria-label="Ler Simples Nacional ou Lucro Presumido para clínicas"
+               target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/blog/pro-labore-lucros.webp"
+                  width="600"
+                  height="400"
+                  loading="lazy"
+                  alt="Simples Nacional vs Lucro Presumido"
+                />
+              </a>
+              <div class="article-card-body">
+                <div class="article-meta">
+                  <span>Planejamento Tributário</span
+                  ><span>7 min de leitura</span>
+                </div>
+                <h2>
+                  <a
+                    href="/equiparacao-hospitalar/simples-nacional-ou-lucro-presumido-clinicas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Simples Nacional ou Lucro Presumido: qual o melhor para
+                    clínicas?</a
+                  >
+                </h2>
+                <p>
+                  Veja um comparativo prático e descubra quando vale a pena sair
+                  do Simples Nacional para aproveitar a redução da equiparação
+                  hospitalar.
+                </p>
+                <a
+                  href="/equiparacao-hospitalar/simples-nacional-ou-lucro-presumido-clinicas"
+                  class="text-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ler artigo <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+          </div>
         </div>
       </section>
     </main>
