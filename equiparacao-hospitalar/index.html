@@ -4,6 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/assets/index-Dd7fOEO-.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>
       Equiparação Hospitalar para Clínicas Médicas | M&amp;A Contabilidade
       Consultiva
@@ -294,9 +300,9 @@
               ><span>Redução na base de cálculo da CSLL</span>
             </div>
             <div>
-              <strong>Fundamento Legal</strong
+              <strong>Amparo Legal</strong
               ><span
-                >Previsto no art. 15, §1º, III, "a", da Lei 9.249/1995 e reconhecido pela Receita Federal, mediante cumprimento dos requisitos de estrutura da clínica.</span
+                >Amparado pela Lei 9.249/1995, art. 15 — o mesmo dispositivo já reconhecido pela Receita Federal e pelo STJ.</span
               >
             </div>
             <div>
@@ -356,53 +362,340 @@
         </div>
       </section>
       
-      <section class="section" id="calculadora" style="background-color: #f8f9fa; padding: 4rem 0;">
+      <section class="section calc-section" id="calculadora" style="background-color: #f8f9fa;">
         <div class="container">
-          <div class="section-heading centered">
-            <p class="eyebrow">Simulação</p>
-            <h2>Quanto muda na base de cálculo?</h2>
-          </div>
-          
-          <div class="calculator-container" style="max-width: 800px; margin: 0 auto; background: #fff; padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-            <div style="margin-bottom: 2.5rem;">
-              <label style="display: block; font-weight: 600; margin-bottom: 1rem; font-size: 1.125rem;">Selecione seu faturamento mensal médio:</label>
-              <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;" id="calc-buttons">
-                <button type="button" class="button button-ghost calc-btn" data-value="50000" style="flex: 1; min-width: 140px;">Até R$ 50 mil</button>
-                <button type="button" class="button button-ghost calc-btn" data-value="100000" style="flex: 1; min-width: 140px;">R$ 50 a 100 mil</button>
-                <button type="button" class="button button-ghost calc-btn" data-value="200000" style="flex: 1; min-width: 140px;">R$ 100 a 200 mil</button>
-                <button type="button" class="button button-ghost calc-btn" data-value="500000" style="flex: 1; min-width: 140px;">R$ 200 a 500 mil</button>
-                <button type="button" class="button button-ghost calc-btn" id="calc-other-btn" style="flex: 1; min-width: 140px;">Outro valor</button>
-              </div>
-              <div id="calc-other-input-container" style="display: none; margin-top: 1.5rem;">
-                <label for="calc-custom-value" style="display: block; font-size: 0.875rem; margin-bottom: 0.5rem; font-weight: 500;">Digite o faturamento mensal (R$):</label>
-                <input type="number" id="calc-custom-value" class="input" style="width: 100%; max-width: 300px; padding: 0.875rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;" placeholder="Ex: 150000">
-              </div>
-            </div>
+          <style>
+            #calculadora {
+              padding: 3.5rem 0;
+            }
+            .calculator-card {
+              max-width: 960px;
+              margin: 0 auto;
+              background: #ffffff;
+              padding: 2.75rem 2.5rem;
+              border-radius: 16px;
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+              border: 1px solid #eef2f6;
+              text-align: left;
+            }
+            .calc-title {
+              font-size: 1.625rem;
+              font-weight: 700;
+              color: #0f2b3e;
+              margin: 0 0 0.5rem 0;
+              line-height: 1.25;
+              letter-spacing: -0.01em;
+            }
+            .calc-subtitle {
+              font-size: 0.9375rem;
+              color: #4b5563;
+              line-height: 1.5;
+              margin: 0 0 1.5rem 0;
+            }
+            .calc-label {
+              display: block;
+              font-size: 0.875rem;
+              font-weight: 600;
+              color: #334155;
+              margin-bottom: 0.75rem;
+            }
+            
+            /* 5 botões em 1 linha no desktop */
+            .calc-buttons-grid {
+              display: grid;
+              grid-template-columns: repeat(5, 1fr);
+              gap: 0.625rem;
+              margin-bottom: 1.5rem;
+            }
+            
+            .calc-btn-item {
+              font-family: inherit;
+              font-size: 0.875rem;
+              font-weight: 600;
+              padding: 0.75rem 0.5rem;
+              border-radius: 8px;
+              cursor: pointer;
+              text-align: center;
+              transition: all 0.2s ease;
+              border: 1px solid #cbd5e1;
+              background: #ffffff;
+              color: #334155;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              min-height: 44px;
+              line-height: 1.2;
+              box-sizing: border-box;
+              -webkit-appearance: none;
+            }
+            .calc-btn-item:hover {
+              background: #f8fafc;
+              border-color: #94a3b8;
+            }
+            .calc-btn-item.active {
+              background: #1e3a5f !important;
+              border-color: #1e3a5f !important;
+              color: #ffffff !important;
+              box-shadow: 0 2px 6px rgba(30, 58, 95, 0.25);
+            }
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-              <div style="background: #fdfdfd; border: 1px solid #eee; padding: 1.5rem; border-radius: 12px; text-align: center;">
-                <h3 style="font-size: 1.125rem; margin-bottom: 0.5rem; font-weight: 600;">Base de cálculo sem equiparação</h3>
-                <p style="font-size: 0.875rem; color: #666; margin-bottom: 1rem;">32% da receita (IRPJ) + 32% (CSLL)</p>
-                <p style="font-size: 1.75rem; font-weight: bold; color: #333;" id="calc-base-sem">R$ 0,00</p>
+            /* 3 blocos lado a lado no desktop */
+            .calc-results-row {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1.15fr;
+              gap: 1rem;
+              align-items: stretch;
+              margin-bottom: 1.25rem;
+            }
+            .calc-result-box {
+              border-radius: 10px;
+              padding: 1.25rem;
+              text-align: left;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+            .calc-result-sem {
+              background: #ffffff;
+              border: 1px solid #e2e8f0;
+            }
+            .calc-result-com {
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+            }
+            .calc-result-label {
+              font-size: 0.8125rem;
+              font-weight: 600;
+              color: #475569;
+              margin-bottom: 0.35rem;
+            }
+            .calc-result-value {
+              font-size: 1.625rem;
+              font-weight: 800;
+              color: #0f172a;
+              line-height: 1.15;
+              margin: 0 0 0.35rem 0;
+              letter-spacing: -0.02em;
+              word-break: break-word;
+            }
+            .calc-result-com .calc-result-value {
+              color: #0f2b3e;
+            }
+            .calc-result-sub {
+              font-size: 0.75rem;
+              color: #64748b;
+              line-height: 1.3;
+            }
+
+            .calc-diff-card {
+              background: #0f2b3e;
+              color: #ffffff;
+              border-radius: 10px;
+              padding: 1.25rem;
+              text-align: left;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            }
+            .calc-diff-label {
+              display: block;
+              font-size: 0.8125rem;
+              font-weight: 500;
+              color: #cbd5e1;
+              margin-bottom: 0.35rem;
+            }
+            .calc-diff-value {
+              font-size: 1.75rem;
+              font-weight: 800;
+              color: #fbbf24;
+              line-height: 1.15;
+              margin: 0 0 0.35rem 0;
+              letter-spacing: -0.02em;
+              word-break: break-word;
+            }
+            .calc-diff-note {
+              font-size: 0.75rem;
+              color: #94a3b8;
+              line-height: 1.3;
+            }
+
+            .calc-disclaimer {
+              font-size: 0.8125rem;
+              color: #64748b;
+              line-height: 1.5;
+              text-align: left;
+              margin-bottom: 1.5rem;
+            }
+            .calc-cta-row {
+              text-align: left;
+            }
+            .calc-cta-btn {
+              display: inline-block;
+              padding: 0.875rem 1.75rem;
+              font-weight: 600;
+            }
+
+            /* TABLET (601px até 991px): Mantém a versão desktop atual */
+            @media (min-width: 601px) and (max-width: 991px) {
+              .calculator-card {
+                max-width: 720px;
+                padding: 2.25rem 2rem;
+              }
+              .calc-buttons-grid {
+                grid-template-columns: repeat(3, 1fr);
+              }
+              .calc-results-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                margin-bottom: 1.25rem;
+              }
+              .calc-diff-card {
+                grid-column: 1 / -1;
+                text-align: center;
+                align-items: center;
+                padding: 1.25rem;
+              }
+              .calc-diff-value {
+                font-size: 2rem;
+              }
+              .calc-disclaimer {
+                text-align: center;
+              }
+              .calc-cta-row {
+                text-align: center;
+              }
+            }
+
+            /* MOBILE (<= 600px): Versão compacta otimizada */
+            @media (max-width: 600px) {
+              #calculadora {
+                padding: 2rem 0 !important;
+              }
+              .calculator-card {
+                padding: 1.25rem 1rem !important;
+                border-radius: 12px;
+              }
+              .calc-title {
+                font-size: 1.25rem;
+                margin-bottom: 0.35rem;
+              }
+              .calc-subtitle {
+                font-size: 0.8125rem;
+                margin-bottom: 1.125rem;
+                line-height: 1.45;
+              }
+              .calc-label {
+                font-size: 0.8125rem;
+                margin-bottom: 0.625rem;
+              }
+              .calc-buttons-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+                margin-bottom: 1.25rem;
+              }
+              .calc-btn-item {
+                font-size: 0.8125rem;
+                padding: 0.625rem 0.25rem;
+                min-height: 42px;
+              }
+              .calc-results-row {
+                grid-template-columns: 1fr;
+                gap: 0.875rem;
+                margin-bottom: 1rem;
+              }
+              .calc-result-box {
+                padding: 0.875rem 0.875rem;
+              }
+              .calc-result-label {
+                font-size: 0.78125rem;
+              }
+              .calc-result-value {
+                font-size: 1.4rem;
+              }
+              .calc-result-sub {
+                font-size: 0.71875rem;
+              }
+              .calc-diff-card {
+                padding: 0.875rem;
+                text-align: center;
+                align-items: center;
+                margin-bottom: 1rem;
+              }
+              .calc-diff-label {
+                font-size: 0.8125rem;
+              }
+              .calc-diff-value {
+                font-size: 1.625rem;
+              }
+              .calc-diff-note {
+                font-size: 0.71875rem;
+              }
+              .calc-disclaimer {
+                font-size: 0.71875rem;
+                text-align: center;
+                margin-bottom: 1.25rem;
+              }
+              .calc-cta-row {
+                text-align: center;
+              }
+              .calc-cta-btn {
+                width: 100%;
+                text-align: center;
+                padding: 0.875rem 1rem;
+                font-size: 0.9375rem;
+              }
+            }
+          </style>
+
+          <div class="calculator-card">
+            <h2 class="calc-title">Quanto muda na sua base de cálculo</h2>
+            <p class="calc-subtitle">
+              Escolha a faixa de faturamento para ver a diferença entre ser
+              tributado sobre 32% da receita ou sobre a presunção reduzida da
+              equiparação hospitalar.
+            </p>
+
+            <div class="calc-body">
+              <label class="calc-label">Faturamento mensal médio</label>
+              <div class="calc-buttons-grid" id="calc-buttons">
+                <button type="button" class="calc-btn-item active" data-value="50000">Até R$ 50 mil</button>
+                <button type="button" class="calc-btn-item" data-value="100000">R$ 50 a 100 mil</button>
+                <button type="button" class="calc-btn-item" data-value="200000">R$ 100 a 200 mil</button>
+                <button type="button" class="calc-btn-item" data-value="500000">R$ 200 a 500 mil</button>
+                <button type="button" class="calc-btn-item" id="calc-more-btn" data-value="750000">Mais de R$ 500 mil</button>
               </div>
-              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 1.5rem; border-radius: 12px; text-align: center;">
-                <h3 style="font-size: 1.125rem; margin-bottom: 0.5rem; font-weight: 600;">Base de cálculo com equiparação</h3>
-                <p style="font-size: 0.875rem; color: #666; margin-bottom: 1rem;">8% da receita (IRPJ) + 12% (CSLL)</p>
-                <p style="font-size: 1.75rem; font-weight: bold; color: #16a34a;" id="calc-base-com">R$ 0,00</p>
+
+              <div id="calc-custom-container" style="display: none; margin-bottom: 1.25rem;">
+                <label for="calc-custom-value" style="display: block; font-size: 0.8125rem; margin-bottom: 0.35rem; font-weight: 500; color: #475569;">Ou digite o faturamento mensal estimado (R$):</label>
+                <input type="number" id="calc-custom-value" class="input" style="width: 100%; max-width: 280px; padding: 0.625rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem;" placeholder="Ex: 800000">
               </div>
-            </div>
 
-            <div style="background: #111; color: #fff; padding: 2rem; border-radius: 12px; text-align: center; margin-bottom: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff; font-weight: 500;">Diferença na base, por ano</h3>
-              <p style="font-size: 2.5rem; font-weight: bold; color: #fbbf24;" id="calc-diff">R$ 0,00</p>
-            </div>
+              <div class="calc-results-row">
+                <div class="calc-result-box calc-result-sem">
+                  <span class="calc-result-label">Base de cálculo sem equiparação</span>
+                  <p class="calc-result-value" id="calc-base-sem">R$ 384.000</p>
+                  <span class="calc-result-sub">32% da receita (IRPJ) + 32% (CSLL)</span>
+                </div>
+                <div class="calc-result-box calc-result-com">
+                  <span class="calc-result-label">Base de cálculo com equiparação</span>
+                  <p class="calc-result-value" id="calc-base-com">R$ 120.000</p>
+                  <span class="calc-result-sub">8% da receita (IRPJ) + 12% (CSLL)</span>
+                </div>
+                <div class="calc-diff-card">
+                  <span class="calc-diff-label">Diferença na base, por ano</span>
+                  <p class="calc-diff-value" id="calc-diff">R$ 264.000</p>
+                  <span class="calc-diff-note">Quanto deixa de compor a base tributável</span>
+                </div>
+              </div>
 
-            <div style="font-size: 0.8125rem; color: #666; line-height: 1.6; margin-bottom: 2.5rem; text-align: center;">
-              <p>Isto é a base de cálculo, não o imposto devido. O valor final depende do lucro efetivo, de adicionais e da apuração completa da clínica. Esta simulação usa o teto de cada faixa e serve para mostrar a ordem de grandeza da diferença — não substitui a análise técnica. Fundamento legal: art. 15, §1º, III, "a", da Lei 9.249/1995 — sujeito ao cumprimento dos requisitos de estrutura e regularização (ANVISA/RDC 50).</p>
-            </div>
+              <div class="calc-disclaimer">
+                <p><strong>Isto é a base de cálculo, não o imposto.</strong> O valor devido depende das alíquotas aplicáveis, de adicionais e da apuração completa da sua clínica. A conta acima usa o teto de cada faixa e serve para mostrar a ordem de grandeza da diferença, não para substituir a análise técnica. Fundamento legal: art. 15, §1º, III, "a", da Lei 9.249/1995 — sujeito aos requisitos de regularização (ANVISA/RDC 50).</p>
+              </div>
 
-            <div style="text-align: center;">
-              <a class="button" href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google%20e%20quero%20uma%20análise%20de%20viabilidade%20para%20equiparação%20hospitalar%20na%20minha%20clínica." target="_blank" onclick="gtag_report_conversion()">Quero minha análise personalizada</a>
+              <div class="calc-cta-row">
+                <a class="button calc-cta-btn" href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google%20e%20quero%20uma%20análise%20de%20viabilidade%20para%20equiparação%20hospitalar%20na%20minha%20clínica." target="_blank" onclick="gtag_report_conversion()">Quero a conta com os meus números</a>
+              </div>
             </div>
           </div>
         </div>
@@ -410,9 +703,9 @@
       
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-          const buttons = document.querySelectorAll('.calc-btn');
-          const otherBtn = document.getElementById('calc-other-btn');
-          const otherInputContainer = document.getElementById('calc-other-input-container');
+          const buttons = document.querySelectorAll('.calc-btn-item');
+          const moreBtn = document.getElementById('calc-more-btn');
+          const customContainer = document.getElementById('calc-custom-container');
           const customValueInput = document.getElementById('calc-custom-value');
           
           const baseSemEl = document.getElementById('calc-base-sem');
@@ -420,14 +713,18 @@
           const diffEl = document.getElementById('calc-diff');
 
           const formatCurrency = (value) => {
-            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+            return new Intl.NumberFormat('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+              maximumFractionDigits: 0
+            }).format(Math.round(value));
           };
 
           const calculate = (monthlyRevenue) => {
             if (!monthlyRevenue || isNaN(monthlyRevenue)) {
-              baseSemEl.textContent = 'R$ 0,00';
-              baseComEl.textContent = 'R$ 0,00';
-              diffEl.textContent = 'R$ 0,00';
+              baseSemEl.textContent = 'R$ 0';
+              baseComEl.textContent = 'R$ 0';
+              diffEl.textContent = 'R$ 0';
               return;
             }
 
@@ -443,82 +740,462 @@
 
           buttons.forEach(btn => {
             btn.addEventListener('click', function() {
-              buttons.forEach(b => {
-                b.classList.remove('button-dark');
-                b.classList.add('button-ghost');
-                b.style.color = '';
-                b.style.borderColor = '';
-                b.style.backgroundColor = '';
-              });
+              buttons.forEach(b => b.classList.remove('active'));
+              this.classList.add('active');
               
-              this.classList.remove('button-ghost');
-              this.classList.add('button-dark');
-              
-              if (this.id === 'calc-other-btn') {
-                otherInputContainer.style.display = 'block';
-                calculate(parseFloat(customValueInput.value));
+              if (this.id === 'calc-more-btn') {
+                customContainer.style.display = 'block';
+                const customVal = parseFloat(customValueInput.value);
+                calculate(customVal > 0 ? customVal : parseFloat(this.dataset.value));
               } else {
-                otherInputContainer.style.display = 'none';
+                customContainer.style.display = 'none';
                 calculate(parseFloat(this.dataset.value));
               }
             });
           });
 
           customValueInput.addEventListener('input', function() {
-            if (otherBtn.classList.contains('button-dark')) {
-              calculate(parseFloat(this.value));
+            if (moreBtn.classList.contains('active')) {
+              const val = parseFloat(this.value);
+              calculate(val > 0 ? val : parseFloat(moreBtn.dataset.value));
             }
           });
 
+          // Inicia com o primeiro botão selecionado
           if (buttons.length > 0) {
-            buttons[0].click();
+            calculate(parseFloat(buttons[0].dataset.value));
           }
         });
       </script>
 
-      <section class="section section-soft" id="requisitos">
-        <div class="container content-grid">
-          <div>
-            <p class="eyebrow">Como conseguir o benefício</p>
-            <h2>
-              O que sua clínica precisa para fazer a Equiparação Hospitalar?
-            </h2>
-            <p>
-              Não basta apenas decidir pagar menos imposto. A Receita Federal
-              exige o cumprimento rigoroso de alguns requisitos estruturais e
-              societários para liberar o benefício sem risco de multas futuras.
-            </p>
-            <p>
-              Você precisa ter uma empresa constituída no formato de Sociedade
-              Empresária (registrada na Junta Comercial), estar no Lucro
-              Presumido e, principalmente, possuir o alvará da Vigilância
-              Sanitária seguindo as normas da Anvisa. A M&amp;A te ajuda a
-              estruturar tudo isso sem dor de cabeça, conduzindo o processo do
-              início ao fim.
-            </p>
-          </div>
-          <div class="feature-panel">
-            <p class="eyebrow">Próximo passo</p>
-            <h2>Descubra se a sua clínica tem direito</h2>
-            <p>
-              Se você não tem clareza se os procedimentos que realiza na clínica
-              dão direito à redução ou se os seus alvarás estão corretos, fale
-              com a M&amp;A e peça um diagnóstico de viabilidade.
-            </p>
-            <div class="button-row">
-              <a
-                class="button button-dark"
-                href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google%20e%20quero%20saber%20se%20minha%20clínica%20tem%20direito%20à%20equiparação%20hospitalar."
-                target="_blank"
-                onclick="gtag_report_conversion()"
-                >Quero avaliar o enquadramento da minha clínica</a
-              ><a
-                class="button button-ghost"
-                href="#faq"
-                style="border: 1px solid rgba(255, 255, 255, 0.3); color: #fff"
-                >Ver perguntas frequentes</a
-              >
+      <section class="section editorial-service-section" id="requisitos">
+        <style>
+          .editorial-service-section {
+            background-color: #F8F6F2;
+            padding: 6.5rem 0;
+            border-top: 1px solid #ECE9E3;
+            border-bottom: 1px solid #ECE9E3;
+          }
+          .editorial-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+          }
+          .editorial-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 1fr;
+            gap: 4.5rem;
+            align-items: start;
+          }
+
+          /* Coluna Esquerda: O Serviço */
+          .editorial-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            margin-bottom: 0.875rem;
+          }
+          .editorial-eyebrow-dash {
+            width: 18px;
+            height: 2px;
+            background-color: #D98E2B;
+            display: inline-block;
+            border-radius: 2px;
+          }
+          .editorial-eyebrow-label {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 0.78125rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #6B7280;
+          }
+          .editorial-headline {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(2rem, 3.5vw, 2.65rem);
+            font-weight: 600;
+            color: #11151A;
+            line-height: 1.25;
+            letter-spacing: -0.015em;
+            margin: 0 0 1.25rem 0;
+          }
+          .editorial-desc {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 1.0625rem;
+            color: #6B7280;
+            line-height: 1.6;
+            margin: 0 0 2.5rem 0;
+            max-width: 620px;
+          }
+          .editorial-checklist-heading {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #11151A;
+            margin: 0 0 1rem 0;
+          }
+          .editorial-checklist-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+          .editorial-checklist-item {
+            display: flex;
+            gap: 1.125rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #ECE9E3;
+            align-items: flex-start;
+          }
+          .editorial-checklist-item:first-child {
+            border-top: 1px solid #ECE9E3;
+          }
+          .editorial-check-icon {
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            background: #11151A;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+          }
+          .editorial-item-content h4 {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 0.9875rem;
+            font-weight: 600;
+            color: #11151A;
+            margin: 0 0 0.25rem 0;
+            line-height: 1.35;
+          }
+          .editorial-item-content p {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 0.875rem;
+            color: #6B7280;
+            margin: 0;
+            line-height: 1.5;
+          }
+
+          /* Coluna Direita: Card O que você ganha */
+          .editorial-card-wrapper {
+            position: sticky;
+            top: 2rem;
+          }
+          .editorial-card {
+            position: relative;
+            background: #FFFFFF;
+            border: 1px solid #ECE9E3;
+            border-radius: 20px;
+            padding: 2.75rem 2.25rem 2.25rem;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+          }
+          .editorial-floating-badge {
+            position: absolute;
+            top: 0;
+            right: 2.25rem;
+            transform: translateY(-50%);
+            background: #E8A33D;
+            border-radius: 12px;
+            padding: 0.55rem 1.15rem;
+            color: #11151A;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(232, 163, 61, 0.25);
+          }
+          .editorial-floating-badge .badge-value {
+            display: block;
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            line-height: 1;
+            color: #11151A;
+            letter-spacing: -0.02em;
+          }
+          .editorial-floating-badge .badge-sub {
+            display: block;
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            line-height: 1;
+            color: #11151A;
+            text-transform: lowercase;
+            margin-top: 3px;
+          }
+          .editorial-card-title {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #11151A;
+            margin: 0 0 1.5rem 0;
+            line-height: 1.3;
+          }
+          .editorial-card-table {
+            border-top: 1px solid #ECE9E3;
+            margin-bottom: 2rem;
+          }
+          .editorial-card-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.125rem 0;
+            border-bottom: 1px solid #ECE9E3;
+          }
+          .editorial-card-row .row-label {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 0.9375rem;
+            color: #6B7280;
+            font-weight: 400;
+          }
+          .editorial-card-row .row-val {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: #11151A;
+          }
+          .editorial-card-row .row-val.optimized {
+            color: #15803d;
+          }
+
+          /* Headline de impacto editorial em Fraunces */
+          .editorial-card-headline {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #11151A;
+            line-height: 1.35;
+            margin: 0 0 1.25rem 0;
+          }
+
+          /* Botão Pílula Preto com Texto Âmbar */
+          .editorial-pill-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: #11151A;
+            color: #E8A33D !important;
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 1.05rem 1.75rem;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-sizing: border-box;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+          }
+          .editorial-pill-cta:hover {
+            background: #1e2530;
+            transform: translateY(-1px);
+            color: #f3b65e !important;
+          }
+
+          .editorial-tertiary-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            width: 100%;
+            margin-top: 1rem;
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 0.8125rem;
+            color: #7A7F87;
+            text-decoration: none;
+            transition: color 0.2s ease;
+          }
+          .editorial-tertiary-link:hover {
+            color: #11151A;
+          }
+          .editorial-tertiary-link svg {
+            opacity: 0.65;
+            transition: opacity 0.2s ease;
+          }
+          .editorial-tertiary-link:hover svg {
+            opacity: 1;
+          }
+
+          /* Responsividade */
+          @media (min-width: 961px) {
+            .editorial-grid {
+              display: grid;
+              grid-template-columns: 58% 38%;
+              justify-content: space-between;
+              gap: 4%;
+              align-items: start;
+            }
+          }
+          @media (max-width: 960px) {
+            .editorial-service-section {
+              padding: 4.5rem 0;
+            }
+            .editorial-grid {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 3.5rem;
+            }
+            .editorial-card-wrapper {
+              position: static;
+              max-width: 600px;
+              margin: 0 auto;
+              width: 100%;
+            }
+          }
+
+          @media (max-width: 580px) {
+            .editorial-service-section {
+              padding: 3.5rem 0;
+            }
+            .editorial-headline {
+              font-size: 1.75rem;
+            }
+            .editorial-desc {
+              font-size: 0.95rem;
+              margin-bottom: 2rem;
+            }
+            .editorial-card {
+              padding: 2.25rem 1.25rem 1.5rem;
+              border-radius: 16px;
+            }
+            .editorial-floating-badge {
+              right: 1.5rem;
+              padding: 0.45rem 0.95rem;
+            }
+            .editorial-card-headline {
+              font-size: 1.1875rem;
+            }
+            .editorial-pill-cta {
+              font-size: 0.875rem;
+              padding: 0.95rem 1.25rem;
+            }
+          }
+        </style>
+
+        <div class="editorial-container">
+          <div class="editorial-grid">
+            
+            <!-- Coluna 1: O Serviço e Checklist Estrutural -->
+            <div class="editorial-left-col">
+              <div class="editorial-eyebrow">
+                <span class="editorial-eyebrow-dash" aria-hidden="true"></span>
+                <span class="editorial-eyebrow-label">O SERVIÇO</span>
+              </div>
+              <h2 class="editorial-headline">O que sua clínica precisa para fazer a Equiparação Hospitalar?</h2>
+              <p class="editorial-desc">
+                Uma análise completa para identificar oportunidades de economia tributária e estruturar sua clínica com total segurança técnica e societária.
+              </p>
+
+              <h3 class="editorial-checklist-heading">O que está incluído</h3>
+              <ul class="editorial-checklist-items">
+                <li class="editorial-checklist-item">
+                  <span class="editorial-check-icon" aria-hidden="true">
+                    <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.5 5.5L5 9L12.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <div class="editorial-item-content">
+                    <h4>Análise do regime tributário</h4>
+                    <p>Estudo detalhado do seu enquadramento atual frente às opções legais.</p>
+                  </div>
+                </li>
+                
+                <li class="editorial-checklist-item">
+                  <span class="editorial-check-icon" aria-hidden="true">
+                    <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.5 5.5L5 9L12.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <div class="editorial-item-content">
+                    <h4>Simulação de cenários (Simples x Lucro Presumido)</h4>
+                    <p>Projeções comparativas para embasar a melhor escolha financeira.</p>
+                  </div>
+                </li>
+
+                <li class="editorial-checklist-item">
+                  <span class="editorial-check-icon" aria-hidden="true">
+                    <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.5 5.5L5 9L12.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <div class="editorial-item-content">
+                    <h4>Avaliação de equiparação hospitalar</h4>
+                    <p>Análise de viabilidade técnica para redução de alíquotas de IRPJ e CSLL.</p>
+                  </div>
+                </li>
+
+                <li class="editorial-checklist-item">
+                  <span class="editorial-check-icon" aria-hidden="true">
+                    <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.5 5.5L5 9L12.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <div class="editorial-item-content">
+                    <h4>Revisão da estrutura PJ</h4>
+                    <p>Otimização da formalização jurídica do seu negócio.</p>
+                  </div>
+                </li>
+
+                <li class="editorial-checklist-item">
+                  <span class="editorial-check-icon" aria-hidden="true">
+                    <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.5 5.5L5 9L12.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <div class="editorial-item-content">
+                    <h4>Recomendações práticas</h4>
+                    <p>Plano de ação imediato para implementar as melhorias identificadas.</p>
+                  </div>
+                </li>
+              </ul>
             </div>
+
+            <!-- Coluna 2: Card O que você ganha com Badge Âmbar e CTA Pílula -->
+            <div class="editorial-card-wrapper">
+              <div class="editorial-card">
+                <div class="editorial-floating-badge" aria-label="Redução de até 30% nos impostos">
+                  <span class="badge-value">-30%</span>
+                  <span class="badge-sub">impostos</span>
+                </div>
+
+                <h3 class="editorial-card-title">O que você ganha</h3>
+                
+                <div class="editorial-card-table">
+                  <div class="editorial-card-row">
+                    <span class="row-label">Segurança jurídica</span>
+                    <span class="row-val">Total</span>
+                  </div>
+                  <div class="editorial-card-row">
+                    <span class="row-label">Fluxo de caixa</span>
+                    <span class="row-val optimized">Otimizado</span>
+                  </div>
+                  <div class="editorial-card-row">
+                    <span class="row-label">Tempo de resposta</span>
+                    <span class="row-val">Até 24 horas</span>
+                  </div>
+                </div>
+
+                <h4 class="editorial-card-headline">Descubra se a sua clínica tem direito</h4>
+                
+                <a
+                  class="editorial-pill-cta"
+                  href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google%20e%20quero%20saber%20se%20minha%20clínica%20tem%20direito%20à%20equiparação%20hospitalar."
+                  target="_blank"
+                  onclick="gtag_report_conversion()"
+                >
+                  Quero avaliar o enquadramento da minha clínica
+                </a>
+
+                <a class="editorial-tertiary-link" href="#faq">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                  Ver perguntas frequentes
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -542,6 +1219,29 @@
             >
           </div>
           <div class="faq-list">
+            <details>
+              <summary>
+                Isso é sonegação ou planejamento agressivo?
+              </summary>
+              <p>
+                Não. Trata-se de elisão fiscal legítima, expressamente amparada pelo
+                <strong>art. 15, § 1º, III, "a", da Lei Federal nº 9.249/1995</strong>.
+                Não se trata de "brecha" ou manobra arriscada: o próprio
+                <strong>Superior Tribunal de Justiça (STJ)</strong>, no julgamento do
+                <strong>Tema Repetitivo 217 (REsp 1.116.399/SP)</strong>, pacificou que
+                o benefício independe de a clínica funcionar como um hospital, aplicando-se
+                à natureza dos serviços médicos e procedimentos prestados. A própria
+                <strong>Receita Federal</strong> reconhece e regulamenta a alíquota
+                reduzida (IN RFB nº 1.234/2012).
+              </p>
+              <p>
+                O que atrai questionamentos fiscais é a má execução técnica: aplicar o
+                benefício sobre consultas simples (o que a lei veda expressamente) ou operar
+                sem os devidos alvarás sanitários da Anvisa (RDC 50) e registros societários.
+                Quando há segregação rigorosa das receitas e enquadramento formal correto,
+                a clínica apenas exerce um direito tributário consolidado.
+              </p>
+            </details>
             <details>
               <summary>Preciso ter leitos ou estrutura de hospital?</summary>
               <p>
@@ -640,8 +1340,8 @@
             <div class="story-copy">
               <p>
                 A M&amp;A analisa seu contrato social, CNAEs, alvarás e forma de
-                emissão de notas fiscais para que o benefício seja
-                aplicado com segurança, com toda a documentação e enquadramento avaliados antes de qualquer alteração.
+                emissão de notas fiscais, assegurando uma estruturação alinhada aos
+                requisitos legais para reduzir a exposição a questionamentos fiscais.
               </p>
               <ul class="check-list">
                 <li>
@@ -890,6 +1590,14 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Isso é sonegação ou planejamento agressivo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. Trata-se de elisão fiscal legítima, expressamente amparada pelo art. 15, § 1º, III, 'a', da Lei Federal nº 9.249/1995. O Superior Tribunal de Justiça (STJ) pacificou o tema no Tema Repetitivo 217 (REsp 1.116.399/SP) e a própria Receita Federal reconhece o benefício (IN RFB nº 1.234/2012). O que gera questionamento ou risco não é a lei, mas a aplicação indevida sobre consultas simples ou sem os alvarás sanitários da Anvisa."
+            }
+          },
           {
             "@type": "Question",
             "name": "Preciso ter leitos ou estrutura de hospital?",
