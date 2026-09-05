@@ -315,48 +315,222 @@
           </div>
         </div>
       </section>
-      <section class="section" id="beneficios">
-        <div class="container">
-          <div class="section-heading centered">
-            <p class="eyebrow">O que é a Equiparação Hospitalar</p>
+      <section class="section beneficios-section" id="beneficios">
+        <style>
+          .beneficios-section {
+            background-color: #F8F6F2;
+            padding: 5.5rem 0;
+            border-top: 1px solid #ECE9E3;
+            border-bottom: 1px solid #ECE9E3;
+          }
+          .beneficios-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+          }
+          .beneficios-heading {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 3.5rem auto;
+          }
+          .beneficios-heading .editorial-eyebrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.625rem;
+            margin-bottom: 0.875rem;
+          }
+          .beneficios-heading h2 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(2rem, 3.2vw, 2.65rem);
+            font-weight: 600;
+            color: #11151A;
+            line-height: 1.25;
+            letter-spacing: -0.015em;
+            margin: 0;
+          }
+
+          /* Grid Desktop */
+          .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            align-items: stretch;
+          }
+          .beneficio-item {
+            background: #FFFFFF;
+            border: 1px solid #ECE9E3;
+            border-radius: 18px;
+            padding: 2.25rem 1.75rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+          }
+          .beneficio-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+          }
+          .beneficio-dash {
+            width: 24px;
+            height: 3px;
+            background-color: #D98E2B;
+            border-radius: 2px;
+            margin-bottom: 0.625rem;
+            display: inline-block;
+          }
+          .beneficio-num {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #11151A;
+            letter-spacing: 0.04em;
+            margin-bottom: 1.125rem;
+            display: block;
+          }
+          .beneficio-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #11151A;
+            line-height: 1.3;
+            margin: 0 0 0.875rem 0;
+          }
+          .beneficio-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            color: #4B5563;
+            line-height: 1.65;
+            margin: 0 0 1.5rem 0;
+            flex-grow: 1;
+          }
+          .beneficio-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: #11151A;
+            letter-spacing: 0.01em;
+            display: inline-block;
+            margin-top: auto;
+          }
+
+          /* Tablet */
+          @media (max-width: 991px) and (min-width: 641px) {
+            .beneficios-grid {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 1.5rem;
+            }
+          }
+
+          /* Mobile: Estrutura idêntica à referência da concorrência mantendo o design da M&A */
+          @media (max-width: 640px) {
+            .beneficios-section {
+              padding: 3.5rem 0;
+            }
+            .beneficios-heading {
+              text-align: left;
+              margin-bottom: 2.25rem;
+            }
+            .beneficios-heading .editorial-eyebrow {
+              justify-content: flex-start;
+            }
+            .beneficios-heading h2 {
+              font-size: 1.75rem;
+              line-height: 1.3;
+            }
+            .beneficios-grid {
+              display: flex;
+              flex-direction: column;
+              gap: 0;
+            }
+            .beneficio-item {
+              background: transparent;
+              border: none;
+              border-radius: 0;
+              box-shadow: none;
+              padding: 1.75rem 0;
+              border-bottom: 1px solid #ECE9E3;
+            }
+            .beneficio-item:first-child {
+              border-top: 1px solid #ECE9E3;
+            }
+            .beneficio-item:hover {
+              transform: none;
+              box-shadow: none;
+            }
+            .beneficio-dash {
+              width: 22px;
+              height: 3px;
+              margin-bottom: 0.5rem;
+            }
+            .beneficio-num {
+              font-size: 0.9375rem;
+              margin-bottom: 0.625rem;
+            }
+            .beneficio-title {
+              font-size: 1.25rem;
+              margin-bottom: 0.625rem;
+            }
+            .beneficio-desc {
+              font-size: 0.9375rem;
+              line-height: 1.6;
+              margin-bottom: 1rem;
+            }
+            .beneficio-tag {
+              font-size: 0.8125rem;
+              color: #11151A;
+            }
+          }
+        </style>
+
+        <div class="beneficios-container">
+          <div class="beneficios-heading">
+            <div class="editorial-eyebrow">
+              <span class="editorial-eyebrow-dash" aria-hidden="true"></span>
+              <span class="editorial-eyebrow-label">O que é a Equiparação Hospitalar</span>
+            </div>
             <h2>Como clínicas médicas conseguem pagar impostos reduzidos?</h2>
           </div>
-          <div class="services-grid">
-            <article class="service-card">
-              <span>01</span>
-              <h3>O Benefício</h3>
-              <p>
-                A legislação permite que serviços relacionados à promoção da
-                saúde (ex: cirurgias, exames, pequenos procedimentos) tenham o
-                mesmo tratamento tributário de hospitais.
+          
+          <div class="beneficios-grid">
+            <article class="beneficio-item">
+              <span class="beneficio-dash" aria-hidden="true"></span>
+              <span class="beneficio-num">01</span>
+              <h3 class="beneficio-title">O Benefício</h3>
+              <p class="beneficio-desc">
+                A legislação permite que serviços relacionados à promoção da saúde (ex: cirurgias, exames, pequenos procedimentos) tenham o mesmo tratamento tributário de hospitais.
               </p>
+              <span class="beneficio-tag">Amparo legal</span>
             </article>
-            <article class="service-card">
-              <span>02</span>
-              <h3>O Impacto Financeiro</h3>
-              <p>
-                Na prática, a presunção do IRPJ cai de 32% para 8%, e da CSLL
-                cai de 32% para 12%. Isso representa uma economia gigantesca no
-                caixa da clínica todos os meses.
+
+            <article class="beneficio-item">
+              <span class="beneficio-dash" aria-hidden="true"></span>
+              <span class="beneficio-num">02</span>
+              <h3 class="beneficio-title">O Impacto Financeiro</h3>
+              <p class="beneficio-desc">
+                Na prática, a presunção do IRPJ cai de 32% para 8%, e da CSLL cai de 32% para 12%. Isso representa uma economia gigantesca no caixa da clínica todos os meses.
               </p>
+              <span class="beneficio-tag">IRPJ 8% e CSLL 12%</span>
             </article>
-            <article class="service-card">
-              <span>03</span>
-              <h3>A Regra Básica</h3>
-              <p>
-                O benefício não se aplica a simples consultas médicas. É
-                necessário realizar procedimentos de saúde específicos, como
-                cirurgias, exames de imagem ou laboratoriais.
+
+            <article class="beneficio-item">
+              <span class="beneficio-dash" aria-hidden="true"></span>
+              <span class="beneficio-num">03</span>
+              <h3 class="beneficio-title">A Regra Básica</h3>
+              <p class="beneficio-desc">
+                O benefício não se aplica a simples consultas médicas. É necessário realizar procedimentos de saúde específicos, como cirurgias, exames de imagem ou laboratoriais.
               </p>
+              <span class="beneficio-tag">Procedimentos e exames</span>
             </article>
-            <article class="service-card">
-              <span>04</span>
-              <h3>O Regime Tributário</h3>
-              <p>
-                Para usufruir da equiparação hospitalar, a sua clínica precisa
-                obrigatoriamente estar enquadrada no regime tributário do Lucro
-                Presumido.
+
+            <article class="beneficio-item">
+              <span class="beneficio-dash" aria-hidden="true"></span>
+              <span class="beneficio-num">04</span>
+              <h3 class="beneficio-title">O Regime Tributário</h3>
+              <p class="beneficio-desc">
+                Para usufruir da equiparação hospitalar, a sua clínica precisa obrigatoriamente estar enquadrada no regime tributário do Lucro Presumido.
               </p>
+              <span class="beneficio-tag">Lucro Presumido</span>
             </article>
           </div>
         </div>
