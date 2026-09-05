@@ -768,12 +768,18 @@
         });
       </script>
 
-      <section class="section editorial-service-section" id="requisitos">
+      <!-- BLOCO 1: O SERVIÇO / O QUE VOCÊ GANHA -->
+      <section class="section editorial-service-section" id="servico">
         <style>
           .editorial-service-section {
             background-color: #F8F6F2;
             padding: 6.5rem 0;
             border-top: 1px solid #ECE9E3;
+            border-bottom: 1px solid #ECE9E3;
+          }
+          .editorial-decision-section {
+            background-color: #FFFFFF;
+            padding: 6.5rem 0;
             border-bottom: 1px solid #ECE9E3;
           }
           .editorial-container {
@@ -783,12 +789,13 @@
           }
           .editorial-grid {
             display: grid;
-            grid-template-columns: 1.35fr 1fr;
-            gap: 4.5rem;
+            grid-template-columns: 58% 38%;
+            justify-content: space-between;
+            gap: 4%;
             align-items: start;
           }
 
-          /* Coluna Esquerda: O Serviço */
+          /* Eyebrow com traço âmbar */
           .editorial-eyebrow {
             display: flex;
             align-items: center;
@@ -810,23 +817,49 @@
             font-weight: 600;
             color: #6B7280;
           }
-          .editorial-headline {
-            font-family: 'Fraunces', Georgia, serif;
-            font-size: clamp(2rem, 3.5vw, 2.65rem);
-            font-weight: 600;
+
+          /* Tipografia: Headlines */
+          .editorial-headline-sans {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: clamp(2rem, 3.2vw, 2.5rem);
+            font-weight: 700;
             color: #11151A;
             line-height: 1.25;
             letter-spacing: -0.015em;
             margin: 0 0 1.25rem 0;
           }
+          .editorial-headline-serif {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(2.05rem, 3.3vw, 2.65rem);
+            font-weight: 600;
+            color: #11151A;
+            line-height: 1.22;
+            letter-spacing: -0.015em;
+            margin: 0 0 1.35rem 0;
+          }
+
+          /* Parágrafos e descrições */
           .editorial-desc {
             font-family: 'Inter', -apple-system, sans-serif;
             font-size: 1.0625rem;
             color: #6B7280;
-            line-height: 1.6;
-            margin: 0 0 2.5rem 0;
+            line-height: 1.65;
+            margin: 0 0 2.25rem 0;
             max-width: 620px;
           }
+          .editorial-body-p {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 1.0625rem;
+            color: #4B5563;
+            line-height: 1.7;
+            margin: 0 0 1.35rem 0;
+            max-width: 640px;
+          }
+          .editorial-body-p:last-of-type {
+            margin-bottom: 0;
+          }
+
+          /* Checklist O que está incluído */
           .editorial-checklist-heading {
             font-family: 'Inter', -apple-system, sans-serif;
             font-size: 1.125rem;
@@ -862,7 +895,7 @@
           }
           .editorial-item-content h4 {
             font-family: 'Inter', -apple-system, sans-serif;
-            font-size: 0.9875rem;
+            font-size: 1rem;
             font-weight: 600;
             color: #11151A;
             margin: 0 0 0.25rem 0;
@@ -873,10 +906,10 @@
             font-size: 0.875rem;
             color: #6B7280;
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.55;
           }
 
-          /* Coluna Direita: Card O que você ganha */
+          /* Cards Editoriais */
           .editorial-card-wrapper {
             position: sticky;
             top: 2rem;
@@ -889,6 +922,12 @@
             padding: 2.75rem 2.25rem 2.25rem;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
           }
+          .editorial-card.decision-card {
+            background: #F8F6F2;
+            padding: 2.5rem 2.25rem;
+          }
+
+          /* Badge Flutuante Âmbar */
           .editorial-floating-badge {
             position: absolute;
             top: 0;
@@ -904,7 +943,7 @@
           .editorial-floating-badge .badge-value {
             display: block;
             font-family: 'Inter', -apple-system, sans-serif;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 800;
             line-height: 1;
             color: #11151A;
@@ -920,6 +959,7 @@
             text-transform: lowercase;
             margin-top: 3px;
           }
+
           .editorial-card-title {
             font-family: 'Inter', -apple-system, sans-serif;
             font-size: 1.25rem;
@@ -930,7 +970,6 @@
           }
           .editorial-card-table {
             border-top: 1px solid #ECE9E3;
-            margin-bottom: 2rem;
           }
           .editorial-card-row {
             display: flex;
@@ -938,31 +977,59 @@
             align-items: center;
             padding: 1.125rem 0;
             border-bottom: 1px solid #ECE9E3;
+            gap: 1rem;
           }
           .editorial-card-row .row-label {
             font-family: 'Inter', -apple-system, sans-serif;
             font-size: 0.9375rem;
             color: #6B7280;
             font-weight: 400;
+            flex-shrink: 0;
           }
           .editorial-card-row .row-val {
             font-family: 'Inter', -apple-system, sans-serif;
             font-size: 0.9375rem;
             font-weight: 700;
             color: #11151A;
+            text-align: right;
           }
           .editorial-card-row .row-val.optimized {
             color: #15803d;
           }
 
-          /* Headline de impacto editorial em Fraunces */
+          /* Headline de impacto no card (Serifada) */
           .editorial-card-headline {
             font-family: 'Fraunces', Georgia, serif;
             font-size: 1.35rem;
             font-weight: 600;
             color: #11151A;
             line-height: 1.35;
-            margin: 0 0 1.25rem 0;
+            margin: 1.6rem 0 1.25rem 0;
+          }
+
+          /* Nota de rodapé técnica no card */
+          .editorial-card-footnote {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 0.775rem;
+            line-height: 1.45;
+            color: #7A7F87;
+            margin: 1.5rem 0 0 0;
+            padding-top: 1rem;
+            border-top: 1px dashed #ECE9E3;
+          }
+
+          /* Headline do Card de Decisão (Serifada) */
+          .decision-card-headline {
+            font-size: clamp(1.4rem, 2vw, 1.65rem);
+            line-height: 1.3;
+            margin: 0 0 1rem 0;
+          }
+          .decision-card-desc {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 0.9375rem;
+            color: #6B7280;
+            line-height: 1.6;
+            margin: 0 0 1.75rem 0;
           }
 
           /* Botão Pílula Preto com Texto Âmbar */
@@ -991,6 +1058,7 @@
             color: #f3b65e !important;
           }
 
+          /* Link Auxiliar Terciário */
           .editorial-tertiary-link {
             display: inline-flex;
             align-items: center;
@@ -1016,21 +1084,12 @@
           }
 
           /* Responsividade */
-          @media (min-width: 961px) {
-            .editorial-grid {
-              display: grid;
-              grid-template-columns: 58% 38%;
-              justify-content: space-between;
-              gap: 4%;
-              align-items: start;
-            }
-          }
           @media (max-width: 960px) {
-            .editorial-service-section {
+            .editorial-service-section,
+            .editorial-decision-section {
               padding: 4.5rem 0;
             }
             .editorial-grid {
-              display: grid;
               grid-template-columns: 1fr;
               gap: 3.5rem;
             }
@@ -1043,17 +1102,23 @@
           }
 
           @media (max-width: 580px) {
-            .editorial-service-section {
+            .editorial-service-section,
+            .editorial-decision-section {
               padding: 3.5rem 0;
             }
-            .editorial-headline {
+            .editorial-headline-sans {
               font-size: 1.75rem;
             }
-            .editorial-desc {
-              font-size: 0.95rem;
-              margin-bottom: 2rem;
+            .editorial-headline-serif {
+              font-size: 1.75rem;
             }
-            .editorial-card {
+            .editorial-desc,
+            .editorial-body-p {
+              font-size: 0.95rem;
+              margin-bottom: 1.75rem;
+            }
+            .editorial-card,
+            .editorial-card.decision-card {
               padding: 2.25rem 1.25rem 1.5rem;
               border-radius: 16px;
             }
@@ -1061,8 +1126,8 @@
               right: 1.5rem;
               padding: 0.45rem 0.95rem;
             }
-            .editorial-card-headline {
-              font-size: 1.1875rem;
+            .decision-card-headline {
+              font-size: 1.25rem;
             }
             .editorial-pill-cta {
               font-size: 0.875rem;
@@ -1080,9 +1145,9 @@
                 <span class="editorial-eyebrow-dash" aria-hidden="true"></span>
                 <span class="editorial-eyebrow-label">O SERVIÇO</span>
               </div>
-              <h2 class="editorial-headline">O que sua clínica precisa para fazer a Equiparação Hospitalar?</h2>
+              <h2 class="editorial-headline-sans">Implementação da Equiparação Hospitalar</h2>
               <p class="editorial-desc">
-                Uma análise completa para identificar oportunidades de economia tributária e estruturar sua clínica com total segurança técnica e societária.
+                Uma análise técnica completa para migrar sua clínica para o regime tributário correto — do diagnóstico à regularização, com segurança jurídica em cada etapa.
               </p>
 
               <h3 class="editorial-checklist-heading">O que está incluído</h3>
@@ -1094,8 +1159,8 @@
                     </svg>
                   </span>
                   <div class="editorial-item-content">
-                    <h4>Análise do regime tributário</h4>
-                    <p>Estudo detalhado do seu enquadramento atual frente às opções legais.</p>
+                    <h4>Diagnóstico de elegibilidade</h4>
+                    <p>Levantamento dos procedimentos, exames e CNAEs da clínica para confirmar o direito à equiparação hospitalar.</p>
                   </div>
                 </li>
                 
@@ -1106,8 +1171,8 @@
                     </svg>
                   </span>
                   <div class="editorial-item-content">
-                    <h4>Simulação de cenários (Simples x Lucro Presumido)</h4>
-                    <p>Projeções comparativas para embasar a melhor escolha financeira.</p>
+                    <h4>Simulação da economia tributária</h4>
+                    <p>Comparativo entre o cenário atual e o cenário com equiparação, calculado com os números reais da sua clínica.</p>
                   </div>
                 </li>
 
@@ -1118,8 +1183,8 @@
                     </svg>
                   </span>
                   <div class="editorial-item-content">
-                    <h4>Avaliação de equiparação hospitalar</h4>
-                    <p>Análise de viabilidade técnica para redução de alíquotas de IRPJ e CSLL.</p>
+                    <h4>Alteração societária, se necessário</h4>
+                    <p>Conversão para Sociedade Empresária e regularização na Junta Comercial.</p>
                   </div>
                 </li>
 
@@ -1130,8 +1195,8 @@
                     </svg>
                   </span>
                   <div class="editorial-item-content">
-                    <h4>Revisão da estrutura PJ</h4>
-                    <p>Otimização da formalização jurídica do seu negócio.</p>
+                    <h4>Regularização do alvará sanitário</h4>
+                    <p>Orientação completa para obtenção do alvará da Vigilância Sanitária conforme as normas da Anvisa.</p>
                   </div>
                 </li>
 
@@ -1142,8 +1207,8 @@
                     </svg>
                   </span>
                   <div class="editorial-item-content">
-                    <h4>Recomendações práticas</h4>
-                    <p>Plano de ação imediato para implementar as melhorias identificadas.</p>
+                    <h4>Segregação de receitas</h4>
+                    <p>Estruturação da separação entre consultas e procedimentos, mês a mês, para aplicação correta do benefício perante a Receita Federal.</p>
                   </div>
                 </li>
               </ul>
@@ -1152,9 +1217,9 @@
             <!-- Coluna 2: Card O que você ganha com Badge Âmbar e CTA Pílula -->
             <div class="editorial-card-wrapper">
               <div class="editorial-card">
-                <div class="editorial-floating-badge" aria-label="Redução de até 30% nos impostos">
-                  <span class="badge-value">-30%</span>
-                  <span class="badge-sub">impostos</span>
+                <div class="editorial-floating-badge" aria-label="Até -75% do IRPJ*">
+                  <span class="badge-value">Até -75%*</span>
+                  <span class="badge-sub">do IRPJ</span>
                 </div>
 
                 <h3 class="editorial-card-title">O que você ganha</h3>
@@ -1162,15 +1227,15 @@
                 <div class="editorial-card-table">
                   <div class="editorial-card-row">
                     <span class="row-label">Segurança jurídica</span>
-                    <span class="row-val">Total</span>
+                    <span class="row-val">Amparada na Lei 9.249/1995</span>
                   </div>
                   <div class="editorial-card-row">
-                    <span class="row-label">Fluxo de caixa</span>
-                    <span class="row-val optimized">Otimizado</span>
+                    <span class="row-label">Economia tributária</span>
+                    <span class="row-val optimized">Mensal e recorrente</span>
                   </div>
                   <div class="editorial-card-row">
                     <span class="row-label">Tempo de resposta</span>
-                    <span class="row-val">Até 24 horas</span>
+                    <span class="row-val">Poucas horas, sem compromisso</span>
                   </div>
                 </div>
 
@@ -1178,7 +1243,7 @@
                 
                 <a
                   class="editorial-pill-cta"
-                  href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google%20e%20quero%20saber%20se%20minha%20clínica%20tem%20direito%20à%20equiparação%20hospitalar."
+                  href="https://wa.me/5521967640942?text=Olá!%20Vim%20pelo%20Google%20e%20quero%20avaliar%20se%20minha%20clínica%20tem%20direito%20à%20equiparação%20hospitalar."
                   target="_blank"
                   onclick="gtag_report_conversion()"
                 >
@@ -1186,17 +1251,69 @@
                 </a>
 
                 <a class="editorial-tertiary-link" href="#faq">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <circle cx="12" cy="12" r="10"></circle>
                     <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                     <line x1="12" y1="17" x2="12.01" y2="17"></line>
                   </svg>
                   Ver perguntas frequentes
                 </a>
+
+                <p class="editorial-card-footnote">
+                  *redução da base de cálculo (32%→8%), não da alíquota final. A CSLL cai de 32% para 12%.
+                </p>
               </div>
             </div>
 
           </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO: COMO CONSEGUIR O BENEFÍCIO (Requisitos Legais) -->
+      <section class="section editorial-decision-section" id="requisitos">
+        <style>
+          .editorial-decision-section {
+            background-color: #FFFFFF;
+            padding: 5.5rem 0;
+            border-bottom: 1px solid #ECE9E3;
+          }
+          .editorial-decision-container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+          }
+          .editorial-decision-container .editorial-headline-serif {
+            font-size: clamp(2rem, 3.2vw, 2.5rem);
+            margin-bottom: 1.75rem;
+          }
+          .editorial-decision-container .editorial-body-p {
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            color: #4B5563;
+            margin-bottom: 1.35rem;
+          }
+          .editorial-decision-container .editorial-body-p:last-of-type {
+            margin-bottom: 0;
+          }
+          @media (max-width: 580px) {
+            .editorial-decision-section {
+              padding: 3.5rem 0;
+            }
+          }
+        </style>
+        <div class="editorial-decision-container">
+          <div class="editorial-eyebrow">
+            <span class="editorial-eyebrow-dash" aria-hidden="true"></span>
+            <span class="editorial-eyebrow-label">COMO CONSEGUIR O BENEFÍCIO</span>
+          </div>
+          <h2 class="editorial-headline-serif">O que sua clínica precisa para ter direito à Equiparação Hospitalar?</h2>
+          
+          <p class="editorial-body-p">
+            Não basta decidir pagar menos imposto. A Receita Federal exige o cumprimento de requisitos estruturais e societários específicos, previstos na Lei 9.249/1995, para liberar o benefício com segurança — sem risco de questionamento futuro.
+          </p>
+          <p class="editorial-body-p">
+            Sua clínica precisa estar constituída como Sociedade Empresária (registrada na Junta Comercial), enquadrada no Lucro Presumido e com o alvará da Vigilância Sanitária regularizado conforme as normas da Anvisa. A M&amp;A conduz esse processo do diagnóstico à regularização completa.
+          </p>
         </div>
       </section>
       <section class="section faq-section" id="faq" aria-labelledby="faq-title">
