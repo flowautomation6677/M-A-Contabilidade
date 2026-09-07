@@ -164,16 +164,109 @@
     --navy-2: #1B3322 !important;
     --ink: #152B1C !important;
   }
-  .site-header { background: #112318f5 !important; }
-  .hero { background: #162C1E !important; }
-  .quick-actions, .blog-listing-section, .article-hero, .privacy-hero, .blog-page, .privacy-page { background: #1D3B28 !important; }
-  .quick-card-dark, .case-video-shell, .about-hero-visual { background: #112318 !important; }
-  .story-section, .stats-bar { background: #112318 !important; }
-  .site-footer { background: #162C1E !important; border-top-color: #2D563A !important; }
+  
+  /* Floating Header Pill */
+  .site-header { 
+    background: rgba(17, 35, 24, 0.95) !important; 
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 999px !important;
+    margin: 20px auto !important;
+    width: min(100% - 40px, 1200px) !important;
+    top: 20px !important;
+    box-shadow: 0 10px 40px rgba(17, 35, 24, 0.4) !important;
+  }
+  @media (max-width: 800px) {
+    .site-header { margin: 10px auto !important; top: 10px !important; border-radius: 24px !important; }
+  }
+
+  /* Light Premium Hero (MVD Style) */
+  .hero { background: #F8F6F2 !important; min-height: auto !important; padding: 140px 0 100px !important; }
+  .hero-glow { display: none !important; }
+  .hero h1 { 
+    color: #112318 !important; 
+    font-family: 'Fraunces', serif !important; 
+    font-weight: 700 !important; 
+    line-height: 1.15 !important; 
+  }
+  .hero-leads p { color: #4B5563 !important; font-weight: 400 !important; }
+  
+  /* Amber Eyebrow */
+  .eyebrow.light { 
+    color: #112318 !important; 
+    display: flex !important; 
+    align-items: center !important; 
+    gap: 12px !important; 
+    font-weight: 700 !important; 
+    letter-spacing: 0.05em !important;
+  }
+  .eyebrow.light::before { 
+    content: "" !important; 
+    display: block !important; 
+    width: 32px !important; 
+    height: 3px !important; 
+    background: #D98E2B !important; 
+    border-radius: 2px !important; 
+  }
+
+  /* CTA Button and Proof */
+  .hero-cta-wrapper .button { 
+    background: #112318 !important; 
+    color: #FFFFFF !important; 
+    border: none !important; 
+    box-shadow: 0 8px 24px rgba(17,35,24,0.2) !important;
+  }
+  .hero-cta-wrapper .button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 32px rgba(17,35,24,0.3) !important;
+  }
+  .hero-cta-wrapper p { color: #6B7280 !important; font-weight: 500 !important; }
+  .hero-proof-copy { color: #4B5563 !important; font-weight: 600 !important; }
+  .hero-proof::before { display: none !important; }
+
+  /* Hero Image Rounded */
+  .page-hero-visual { 
+    border-radius: 24px !important; 
+    border: none !important; 
+    box-shadow: 0 24px 60px rgba(17,35,24,0.15) !important; 
+  }
+
+  /* Stats Bar Modernization */
+  .stats-bar { 
+    background: #FFFFFF !important; 
+    color: #112318 !important; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03) !important; 
+    border: 1px solid #ECE9E3 !important; 
+    border-radius: 24px !important; 
+    padding: 40px !important;
+  }
+  .stats-bar strong { 
+    color: #D98E2B !important; 
+    font-family: 'Inter', sans-serif !important; 
+    font-weight: 800 !important; 
+    font-size: 2.2rem !important;
+  }
+  .stats-bar span { 
+    color: #4B5563 !important; 
+    font-weight: 500 !important; 
+    font-size: 0.9rem !important; 
+  }
+
+  /* Highlight Card */
+  .beneficio-item:nth-child(2) {
+    background: #112318 !important;
+    border-color: #1B3322 !important;
+  }
+  .beneficio-item:nth-child(2) .beneficio-title,
+  .beneficio-item:nth-child(2) .beneficio-num { color: #FFFFFF !important; }
+  .beneficio-item:nth-child(2) .beneficio-desc { color: #E5E7EB !important; }
+  .beneficio-item:nth-child(2) .beneficio-tag { background: #1B3322 !important; color: #FFFFFF !important; }
+  
+  /* Footer */
+  .site-footer { background: #112318 !important; border-top-color: #1B3322 !important; }
   .footer-panel { background: #1B3322 !important; border-color: #2D563A !important; }
-  .footer-main-card, .footer-social-card { background: #22432D !important; border-color: #336141 !important; }
-  .footer-instagram { background: #1A3323 !important; }
-  .page-hero { background: radial-gradient(circle at 84% 0, #c090302e, transparent 30%), #1D3B28 !important; }
+  .footer-main-card, .footer-social-card { background: #162C1E !important; border-color: #2A5036 !important; }
+  .footer-instagram { background: #112318 !important; }
 </style>
 </head>
   <body>
