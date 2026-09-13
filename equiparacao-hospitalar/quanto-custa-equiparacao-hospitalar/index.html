@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
@@ -181,8 +181,14 @@
     .site-header { margin: 10px auto !important; top: 10px !important; border-radius: 24px !important; }
   }
 
+    /* Center Header Navigation */
+  .brand { margin-right: 0 !important; }
+  .header-inner { justify-content: space-between !important; }
+  .desktop-nav { margin: 0 auto !important; }
+  
   /* Light Premium Hero (MVD Style) */
-  .hero { background: #F8F6F2 !important; min-height: auto !important; padding: 140px 0 100px !important; }
+  .hero { background: #F8F6F2 !important; min-height: auto !important; padding: 120px 0 60px !important; }
+  .hero-copy { padding-top: 0 !important; }
   .hero-glow { display: none !important; }
   .hero h1 { 
     color: #112318 !important; 
@@ -192,9 +198,9 @@
   }
   .hero-leads p { color: #4B5563 !important; font-weight: 400 !important; }
   
-  /* Amber Eyebrow */
+    /* Amber Eyebrow */
   .eyebrow.light { 
-    color: #112318 !important; 
+    color: #D98E2B !important;  
     display: flex !important; 
     align-items: center !important; 
     gap: 12px !important; 
@@ -232,42 +238,237 @@
     box-shadow: 0 24px 60px rgba(17,35,24,0.15) !important; 
   }
 
-  /* Stats Bar Modernization */
+      /* Stats Bar Modernization */
   .stats-bar { 
-    background: #FFFFFF !important; 
-    color: #112318 !important; 
-    box-shadow: 0 10px 40px rgba(0,0,0,0.03) !important; 
-    border: 1px solid #ECE9E3 !important; 
+    background: #112318 !important; 
+    color: #FFFFFF !important; 
+    box-shadow: 0 12px 48px rgba(0,0,0,0.08) !important; 
+    border: 1px solid #1B3322 !important; 
     border-radius: 24px !important; 
-    padding: 40px !important;
+    padding: 2.5rem 3rem !important;
+  }
+  .stats-bar div {
+    position: relative !important;
+  }
+  @media (min-width: 769px) {
+    .stats-bar div:not(:last-child)::after {
+      content: "" !important;
+      position: absolute !important;
+      right: -10px !important;
+      top: 5% !important;
+      height: 90% !important;
+      width: 1px !important;
+      background: #1B3322 !important;
+    }
+  }
+  @media (max-width: 768px) {
+    .stats-bar { padding: 2rem !important; gap: 1.5rem !important; }
+    .stats-bar div:not(:last-child) {
+      padding-bottom: 1.5rem !important;
+      border-bottom: 1px solid #1B3322 !important;
+    }
   }
   .stats-bar strong { 
     color: #D98E2B !important; 
-    font-family: 'Inter', sans-serif !important; 
-    font-weight: 800 !important; 
-    font-size: 2.2rem !important;
+    font-family: 'Fraunces', Georgia, serif !important; 
+    font-weight: 600 !important; 
+    font-size: 2.3rem !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.1 !important;
   }
   .stats-bar span { 
-    color: #4B5563 !important; 
+    color: #E5E7EB !important; 
     font-weight: 500 !important; 
-    font-size: 0.9rem !important; 
+    font-size: 0.95rem !important; 
+    line-height: 1.5 !important;
   }
 
   /* Highlight Card */
   .beneficio-item:nth-child(2) {
     background: #112318 !important;
     border-color: #1B3322 !important;
+    border-radius: 18px !important;
+    padding: 2.25rem 1.75rem !important;
+    margin: 1rem 0 !important;
   }
   .beneficio-item:nth-child(2) .beneficio-title,
   .beneficio-item:nth-child(2) .beneficio-num { color: #FFFFFF !important; }
   .beneficio-item:nth-child(2) .beneficio-desc { color: #E5E7EB !important; }
-  .beneficio-item:nth-child(2) .beneficio-tag { background: #1B3322 !important; color: #FFFFFF !important; }
+  .beneficio-item:nth-child(2) .beneficio-tag { background: #1B3322 !important; color: #FFFFFF !important; padding: 0.5rem 0.75rem !important; border-radius: 8px !important; display: inline-block !important; margin-bottom: 0 !important; }
   
   /* Footer */
   .site-footer { background: #112318 !important; border-top-color: #1B3322 !important; }
   .footer-panel { background: #1B3322 !important; border-color: #2D563A !important; }
   .footer-main-card, .footer-social-card { background: #162C1E !important; border-color: #2A5036 !important; }
   .footer-instagram { background: #112318 !important; }
+  /* Premium Tags for Light Cards */
+  .beneficio-tag {
+    font-size: 0.8125rem !important;
+    color: #112318 !important;
+    background: #F4F2EE !important;
+    padding: 0.45rem 0.85rem !important;
+    border-radius: 6px !important;
+    display: inline-block !important;
+    font-weight: 700 !important;
+    margin-top: auto !important;
+    align-self: flex-start !important;
+    border: 1px solid #EBE7E0 !important;
+  }
+
+  /* Correção do fundo preto e proporção da foto da autoridade (Geral) */
+  .story-section .story-image {
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+  .story-section .story-image img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4/5 !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    max-height: none !important;
+    border: 1px solid #D98E2B !important;
+    border-radius: 14px !important;
+  }
+
+  /* Centralização da Seção Autoridade (Rodrigo Tenório) no Mobile */
+  @media (max-width: 800px) {
+    .story-section .story-heading {
+      text-align: center !important;
+    }
+    .story-section .story-heading .eyebrow.light {
+      justify-content: center !important;
+    }
+    .story-section .story-copy {
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+    .story-section .story-copy h3 {
+      text-align: center !important;
+    }
+    .story-section .story-copy p {
+      text-align: center !important;
+      max-width: 540px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .story-section .story-copy .check-list {
+      display: inline-flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+      margin: 28px auto 20px !important;
+      gap: 16px !important;
+      width: fit-content !important;
+      max-width: 100% !important;
+    }
+    .story-section .story-copy .button {
+      margin: 18px auto 0 !important;
+      display: inline-flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
+  }
+
+  /* Premium FAQ Redesign - Dark Green */
+  .faq-section {
+    background: #112318 !important;
+    padding: 120px 0 !important;
+  }
+  .faq-section .section-heading h2 {
+    color: #FFFFFF !important;
+    font-family: 'Fraunces', serif !important;
+  }
+  .faq-section .section-heading p {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .faq-section .eyebrow.light {
+    color: #D98E2B !important;
+  }
+  .faq-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin-top: 48px !important;
+  }
+  .faq-list details {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(217, 142, 43, 0.2) !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease !important;
+  }
+  .faq-list details:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(217, 142, 43, 0.5) !important;
+  }
+  .faq-list details[open] {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: #D98E2B !important;
+  }
+  .faq-list summary {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    padding: 24px 32px !important;
+    list-style: none !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    cursor: pointer !important;
+  }
+  .faq-list summary::-webkit-details-marker {
+    display: none !important;
+  }
+  .faq-list summary::after {
+    content: '+' !important;
+    color: #D98E2B !important;
+    font-size: 1.5rem !important;
+    font-weight: 300 !important;
+  }
+  .faq-list details[open] summary::after {
+    content: '-' !important;
+  }
+  .faq-list details p {
+    color: rgba(255, 255, 255, 0.6) !important;
+    padding: 0 32px 32px !important;
+    line-height: 1.7 !important;
+    margin: 0 !important;
+  }
+  .faq-section .button-ghost {
+    background: #D98E2B !important;
+    color: #112318 !important;
+    border: none !important;
+    font-weight: 700 !important;
+    margin-top: 1.5rem !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 16px 32px !important;
+    border-radius: 999px !important;
+    text-decoration: none !important;
+  }
+  .faq-section .button-ghost:hover {
+    background: #e69d35 !important;
+    transform: translateY(-2px) !important;
+  }
+  @media (max-width: 800px) {
+    .faq-list summary {
+      padding: 20px 24px !important;
+      font-size: 1rem !important;
+    }
+    .faq-list details p {
+      padding: 0 24px 24px !important;
+      font-size: 0.95rem !important;
+    }
+    .hero { padding: 80px 0 40px !important; }
+  }
+
+  .article-hero {
+    background-color: #112318 !important;
+  }
 </style>
 </head>
   <body>
